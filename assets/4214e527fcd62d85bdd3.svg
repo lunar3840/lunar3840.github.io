@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="55.5 10.5 120 120" fill="none">
+<g filter="url(#filter0_d_228_3330)">
+<circle cx="115.5" cy="70.5" r="60" fill="white" />
+<circle cx="115.5" cy="70.5" r="59.25" stroke="#DCDCDC" stroke-width="1.5" />
+</g>
+<defs>
+<filter id="filter0_d_228_3330" x="45" y="0" width="141" height="141" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="5.25" />
+<feColorMatrix type="matrix" values="0 0 0 0 0.879167 0 0 0 0 0.879167 0 0 0 0 0.879167 0 0 0 1 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_228_3330" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_228_3330" result="shape" />
+</filter>
+</defs>
+<g transform="translate(115.5 70.5) scale(1.12) translate(-115.5 -70.5)"><path d="M115.5 37.5V103.5" stroke="#8B8B8B" stroke-width="6" />
+<path d="M138.834 47.1654L92.1654 93.8345" stroke="#8B8B8B" stroke-width="6" />
+<path d="M92.1655 47.1654L138.835 93.8345" stroke="#8B8B8B" stroke-width="6" />
+<path d="M82.5 70.5H148.5" stroke="#8B8B8B" stroke-width="6" />
+<circle cx="115.5" cy="70.5" r="21" fill="white" stroke="#8B8B8B" stroke-width="6" />
+</g></svg>

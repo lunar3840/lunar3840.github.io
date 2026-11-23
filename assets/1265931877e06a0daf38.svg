@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="10.5 10.5 120 120" fill="none">
+<g id="01_HOME">
+<g id="Album Icon">
+<g id="Icon">
+<g id="Ellipse 9" filter="url(#filter0_d_228_3302)">
+<circle cx="70.5" cy="70.5" r="60" fill="white" />
+<circle cx="70.5" cy="70.5" r="59.25" stroke="#DCDCDC" stroke-width="1.5" />
+</g>
+<g transform="translate(70.5 70.5) scale(1.12) translate(-70.5 -70.5)"><g id="Album icon">
+<rect id="Rectangle 22" x="40.5" y="49.5" width="60" height="42" fill="white" stroke="#4277FF" stroke-width="6" />
+<g id="Union">
+<mask id="path-4-inside-1_228_3302" fill="white">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M62.5385 57C56.1659 57 51 62.1659 51 68.5385V94.5H69.75H74.0769H88.5V80.5385C88.5 74.1659 83.3341 69 76.9615 69C75.9359 69 74.9603 69.2141 74.0769 69.6001V68.5385C74.0769 62.1659 68.911 57 62.5385 57Z" />
+</mask>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M62.5385 57C56.1659 57 51 62.1659 51 68.5385V94.5H69.75H74.0769H88.5V80.5385C88.5 74.1659 83.3341 69 76.9615 69C75.9359 69 74.9603 69.2141 74.0769 69.6001V68.5385C74.0769 62.1659 68.911 57 62.5385 57Z" fill="white" />
+<path d="M51 94.5H45V100.5H51V94.5ZM88.5 94.5V100.5H94.5V94.5H88.5ZM74.0769 69.6001H68.0769V78.7693L76.4792 75.0982L74.0769 69.6001ZM51 68.5385H57C57 65.4797 59.4797 63 62.5385 63V57V51C52.8522 51 45 58.8522 45 68.5385H51ZM51 94.5H57V68.5385H51H45V94.5H51ZM69.75 94.5V88.5H51V94.5V100.5H69.75V94.5ZM74.0769 94.5V88.5H69.75V94.5V100.5H74.0769V94.5ZM88.5 94.5V88.5H74.0769V94.5V100.5H88.5V94.5ZM88.5 80.5385H82.5V94.5H88.5H94.5V80.5385H88.5ZM76.9615 69V75C80.0203 75 82.5 77.4797 82.5 80.5385H88.5H94.5C94.5 70.8522 86.6478 63 76.9615 63V69ZM74.0769 69.6001L76.4792 75.0982C76.6192 75.037 76.7782 75 76.9615 75V69V63C75.0936 63 73.3013 63.3912 71.6747 64.1019L74.0769 69.6001ZM74.0769 68.5385H68.0769V69.6001H74.0769H80.0769V68.5385H74.0769ZM62.5385 57V63C65.5973 63 68.0769 65.4797 68.0769 68.5385H74.0769H80.0769C80.0769 58.8522 72.2247 51 62.5385 51V57Z" fill="#4277FF" mask="url(#path-4-inside-1_228_3302)" />
+</g>
+</g>
+</g></g>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_228_3302" x="0" y="0" width="141" height="141" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset />
+<feGaussianBlur stdDeviation="5.25" />
+<feColorMatrix type="matrix" values="0 0 0 0 0.879167 0 0 0 0 0.879167 0 0 0 0 0.879167 0 0 0 1 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_228_3302" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_228_3302" result="shape" />
+</filter>
+</defs>
+</svg>

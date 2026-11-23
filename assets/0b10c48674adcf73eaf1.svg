@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="1600" height="900" fill="#f0f0f0"/>
+<g font-family="Pretendard,Malgun Gothic,sans-serif" fill="#242427">
+<rect x="80" y="82" width="14" height="42" fill="#20cad7"/>
+<text x="116" y="116" font-size="34" font-weight="700">영상 편집 환경 개선</text>
+<text x="80" y="240" font-size="86" font-weight="750">FilmCraft</text>
+<text x="83" y="306" font-size="34" fill="#565c63">실제 편집에서 출발한 도구와 작업 흐름</text>
+<path d="M300 473H1295" stroke="#bbbfc4" stroke-width="5"/>
+<g font-size="34" font-weight="700" text-anchor="middle">
+<rect x="80" y="386" width="420" height="180" fill="white" stroke="#20cad7" stroke-width="5"/>
+<text x="290" y="465">한글 입력</text><text x="290" y="516" fill="#56606a" font-size="27" font-weight="500">기존 자막 서식 연결</text>
+<rect x="590" y="386" width="420" height="180" fill="white" stroke="#cfd2d5" stroke-width="2"/>
+<text x="800" y="465">자막 생성·검수</text><text x="800" y="516" fill="#56606a" font-size="27" font-weight="500">화자·싱크·표기 규칙</text>
+<rect x="1100" y="386" width="420" height="180" fill="white" stroke="#cfd2d5" stroke-width="2"/>
+<text x="1310" y="465">쇼츠 포맷</text><text x="1310" y="516" fill="#56606a" font-size="27" font-weight="500">제목·로고·규격 배치</text>
+</g>
+<path d="M80 686H1520" stroke="#b8bcc1" stroke-width="2"/>
+<text x="80" y="756" font-size="30" font-weight="650">요구사항 정의 · AI 보조 구현 · 실제 작업 검증</text>
+<text x="80" y="812" font-size="26" fill="#61676e">기능 구성 요약</text>
+</g></svg>
