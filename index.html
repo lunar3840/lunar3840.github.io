@@ -453,7 +453,7 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 .home-status{display:grid;justify-items:end;gap:5px}
 .read-count{font-size:13px;font-weight:600;color:var(--soft)}
 .home-role{font-size:clamp(14px,1.25vw,19px);color:var(--soft);font-weight:600;margin-top:6px}
-.tile-read{position:absolute;top:6%;right:6%;font-style:normal;font-size:clamp(12px,.85vw,14px);font-weight:750;line-height:1;padding:.42em .65em;border-radius:99px;background:#fff;color:#1c2126;box-shadow:0 1px 4px #0003}
+.tile-read{position:absolute;top:6%;right:7%;font-style:normal;font-size:clamp(15px,1.25vw,20px);font-weight:800;line-height:1;color:inherit;opacity:.85}
 #toast{position:fixed;left:50%;bottom:calc(var(--action-bar-height,52px) + 18px);transform:translate(-50%,12px);background:#202327;color:#fff;padding:.8em 1.15em;border-radius:10px;font-weight:700;font-size:15px;line-height:1.5;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:20;max-width:calc(100% - 32px);text-align:center}
 #toast.show{opacity:1;transform:translate(-50%,0)}
 /* text that was 10–12px */
@@ -641,8 +641,8 @@ function refreshReadMarks(){
   const byTile={about:["about"],activities:["activities",...projects.map(p=>p.id),"others"],play:["play","more"],fandom:["fandom"],design:["design"]};
   btns.forEach((b,i)=>{
     const pages=byTile[tiles[i].k]||[],done=pages.filter(k=>readSet.has(k)).length,mark=$(".tile-read",b);
-    mark.textContent=done>=pages.length?"✓ 다 읽음":done+"/"+pages.length;
-    mark.hidden=!done;
+    mark.textContent="✓";
+    mark.hidden=done<pages.length;
   });
   const all=readPages(),count=all.filter(k=>readSet.has(k)).length;
   const label=$(".read-count",home);
