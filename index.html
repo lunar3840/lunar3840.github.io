@@ -747,9 +747,11 @@ async function leave(){
 }
 
 // Keep the PR document's groups, with direct access to the editing work.
+// Every non-featured project in the library gets a TOC entry (short labels below).
+const tocShort={roblox:"로블록스 EXIT-4",srpg:"SRPG 프로토타입",dss:"DSS VR 시뮬레이터",venta:"VENTA X 평가",editing:"김호댕 채널 편집",dolby:"Dolby PR 공모전",filmcraft:"FilmCraft 편집 도구",simulation:"Arena 시뮬레이션",turtle:"거북이를 날다",policy:"시민정책디자인단",forum:"구미 2030 여성포럼"};
 const tocGroups=[
   {items:[["about","자기소개",false]]},
-  {items:[["activities","작업 라이브러리",false],["project1","라면축제 VR",true],["project2","AI 개인 게임 개발",true],["others","기타 프로젝트",true],["roblox","로블록스 EXIT-4",2],["dss","DSS VR 시뮬레이터",2],["editing","김호댕 채널 편집",2],["filmcraft","FilmCraft 편집 도구",2]]},
+  {items:[["activities","작업 라이브러리",false],["project1","라면축제 VR",true],["project2","AI 개인 게임 개발",true],["others","기타 프로젝트",true],["*other-projects"]]},
   {items:[["play","플레이 기록",false],["more","더 많은 게임",true]]},
   {items:[["fandom","서브컬처",false]]},
   {items:[["design","분석서·기획서",false]]},
@@ -770,7 +772,7 @@ Object.assign(content,{
 });
 function tocHTML(key){
   const active=content[key]?.toc||{gallery:"others"}[key]||key;
-  return '<nav class="toc" aria-label="목차"><div class="toc-inner"><div class="toc-caption">전체 목차</div>'+tocGroups.map(g=>'<div class="toc-group">'+(g.label?'<span class="toc-group-label">'+g.label+'</span>':"")+g.items.filter(([,,child])=>!child||g.items.some(([id])=>id===active)).map(([id,label,child])=>'<button class="toc-entry'+(child?' child':'')+(child===2?' nested':'')+'" data-action="'+id+'"'+(id===active?' aria-current="page"':'')+'>'+label+'</button>').join("")+'</div>').join("")+'</div></nav>';
+  return '<nav class="toc" aria-label="목차"><div class="toc-inner"><div class="toc-caption">전체 목차</div>'+tocGroups.map(g=>({...g,items:g.items.flatMap(it=>it[0]==="*other-projects"?projects.filter(p=>!p.featured).map(p=>[p.id,tocShort[p.id]||p.name,2]):[it])})).map(g=>'<div class="toc-group">'+(g.label?'<span class="toc-group-label">'+g.label+'</span>':"")+g.items.filter(([,,child])=>!child||g.items.some(([id])=>id===active)).map(([id,label,child])=>'<button class="toc-entry'+(child?' child':'')+(child===2?' nested':'')+'" data-action="'+id+'"'+(id===active?' aria-current="page"':'')+'>'+label+'</button>').join("")+'</div>').join("")+'</div></nav>';
 }
 function keepTocEntryVisible(rail,entry){
   if(!entry)return;
@@ -1909,7 +1911,7 @@ Object.assign(content,{
   more:{title:"PLAY LOG",charge:11,heading:"더 많은 게임 플레이 기록",lead:"기존 PR 문서에 100시간 이상 플레이했다고 기록한 게임입니다.",eyebrow:"PLAY LOG / MORE GAMES",body:()=>mediaShelf(moreGames.map(n=>[n]),"more-")},
   fandom:{title:"FANDOM",charge:0,heading:"팬으로서 본 콘텐츠",lead:"애니메이션과 문학, 공연을 통해 캐릭터와 이야기, 팬덤이 콘텐츠를 즐기는 방식을 경험해 왔습니다.",eyebrow:"PORTFOLIO / FANDOM",body:()=>'<div class="media-shelf fandom-shelf">'+[["lovelive","러브라이브"],["shinkai","신카이 마코토 작품"],["concert","팬카페·콘서트"]].map(([id,title])=>'<article class="shelf-item">'+mediaImage(id,"","loading=\"lazy\"")+'<div><h4>'+title+'</h4></div></article>').join("")+'</div>'+figure("fandom","PR 문서 원본 페이지 보기")}
 });
-for(const p of projects)content[p.id]={title:"PROJECTS",charge:p.id==="project2"?44:p.id==="project1"?56:33,heading:p.name,lead:p.intro,eyebrow:"PROJECTS / "+categoryName(p.category),toc:p.featured?p.id:"others",body:()=>caseHTML(p)};
+for(const p of projects)content[p.id]={title:"PROJECTS",charge:p.id==="project2"?44:p.id==="project1"?56:33,heading:p.name,lead:p.intro,eyebrow:"PROJECTS / "+categoryName(p.category),toc:p.id,body:()=>caseHTML(p)};
 content.direction.profileSection="profile-strengths";
 content.work.profileSection="profile-workflow";
 content.teaching={profileSection:"profile-teaching"};
