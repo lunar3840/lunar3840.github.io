@@ -1943,12 +1943,9 @@ content.contact.body=contactBlockHTML;
 content.tools={profileSection:"profile-tools"};
 const designDocs=[
   {group:"기획 문서",code:"DESIGN DOCS",items:[
+    {kind:"기획서",title:"익스트랙션 게임 기획 포트폴리오",desc:"어떤 게임인지, 참고한 게임에서 무엇을 가져왔는지, 시스템별 기획 의도와 규칙, AI와 함께 만든 과정과 결과를 81쪽으로 정리했습니다.",meta:"PDF · 81쪽 · 2026.11.24",url:"docs/extraction-portfolio.pdf",label:"PDF 열기"},
     {kind:"기획 문서",title:"익스트랙션 기획 라이브러리",desc:"게임 시스템과 콘텐츠 기획, 변경 기록을 정리한 프로젝트 라이브러리입니다.",meta:"웹 문서 · 새 탭에서 열립니다",url:lib,label:"라이브러리 열기"},
     {kind:"수치 데이터",title:"익스트랙션 데이터 편집기",desc:"게임 수치와 밸런스 데이터를 확인하는 편집기입니다. 열람 전용으로 공개되어 있습니다.",meta:"103개 분류 · 12,931개 값",url:editorUrl,label:"편집기 열기"},
-    {kind:"기획서",title:"익스트랙션 기획서",desc:"문서를 정리해 올릴 예정입니다.",pending:true}
-  ]},
-  {group:"분석 문서",code:"ANALYSIS",items:[
-    {kind:"분석서",title:"게임 UX 분석서",desc:"문서를 정리해 올릴 예정입니다.",pending:true}
   ]}
 ];
 function designHTML(){
@@ -1958,7 +1955,7 @@ function designHTML(){
     return '<article class="doc-card'+(doc.pending?' pending':'')+'"><div class="doc-cover" aria-hidden="true"><span>'+doc.kind+'</span><b>'+String(index).padStart(2,"0")+'</b></div><div class="doc-copy">'+lab(doc.pending?"준비 중":doc.kind)+'<h4>'+doc.title+'</h4><p>'+doc.desc+'</p>'+(doc.meta?'<p class="doc-meta">'+doc.meta+'</p>':"")+(doc.url?'<div class="case-links">'+ext(doc.url,doc.label)+jump("project2","관련 작업 보기")+'</div>':"")+'</div></article>';
   }).join("")+'</div></section>').join("");
 }
-content.design={title:"분석서·기획서",heading:"분석서와 기획서",lead:"직접 쓴 기획 문서와 분석 문서를 모아 두는 곳입니다. 지금은 익스트랙션의 기획 라이브러리와 수치 데이터를 열어 볼 수 있습니다.",eyebrow:"PORTFOLIO / DESIGN",body:designHTML};
+content.design={title:"분석서·기획서",heading:"분석서와 기획서",lead:"직접 쓴 기획 문서와 분석 문서를 모아 두는 곳입니다. 익스트랙션의 기획서와 기획 라이브러리, 수치 데이터를 열어 볼 수 있습니다.",eyebrow:"PORTFOLIO / DESIGN",body:designHTML};
 
 // Each page has its own address (#about, #project2, #about/profile-tools) and follows the browser's back button.
 let currentSection=null;
