@@ -1366,6 +1366,9 @@ const projects=[
   "ref": "others"
 }
 ];
+// Projects added after the original PR document go to the end of the list (library and TOC).
+{const later=["srpg","dss","venta","dolby","simulation"];
+ projects.sort((a,b)=>(later.includes(a.id)?1+later.indexOf(a.id):0)-(later.includes(b.id)?1+later.indexOf(b.id):0));}
 const categoryName=id=>groups.find(([key])=>key===id)?.[1]||"";
 const mediaSrc=id=>pack["media/"+id+".jpg"]||pack["media/"+id+".png"]||pack["media/"+id+".svg"]||pack["media/"+id+".webp"];
 const mediaImage=(id,alt,extra="")=>'<img src="'+mediaSrc(id)+'" alt="'+alt+'" '+extra+'>';
