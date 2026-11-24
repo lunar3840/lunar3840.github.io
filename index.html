@@ -1,9 +1,9 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="이호진의 인터랙티브 게임 기획 포트폴리오"><title>이호진 · SELF PR PORTFOLIO</title><style>
-:root{--paper:#f0f0f0;--ink:#242427;--soft:#65676e;--cyan:#20cad7;--line:#cfced2;font-family:Pretendard,"Malgun Gothic",system-ui,sans-serif;color:var(--ink);background:var(--paper);color-scheme:light}
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="description" content="이호진의 인터랙티브 게임 기획 포트폴리오"><title>이호진 · SELF PR PORTFOLIO</title><meta property="og:type" content="website"><meta property="og:title" content="이호진 · SELF PR PORTFOLIO"><meta property="og:description" content="UX/UI · 시스템 및 콘텐츠 기획 포트폴리오"><meta property="og:url" content="https://lunar3840.github.io/"><meta property="og:image" content="https://lunar3840.github.io/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript><style>
+:root{--paper:#f0f0f0;--ink:#242427;--soft:#65676e;--cyan:#20cad7;--line:#cfced2;font-family:"Pretendard Variable",Pretendard,"Malgun Gothic",system-ui,sans-serif;color:var(--ink);background:var(--paper);color-scheme:light}
 *{box-sizing:border-box}body{margin:0}button,a{font:inherit}button{cursor:pointer;color:inherit}button:disabled{cursor:default}button:focus-visible,a:focus-visible{outline:3px solid #087ad7;outline-offset:5px}img{display:block;max-width:100%}[hidden]{display:none!important}h1,h2,h3,p{margin:0}a{color:inherit}button{border:0;background:none}.pill{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);border-radius:30px;padding:.72em 1.1em;background:#fff;font-weight:700;text-decoration:none;white-space:nowrap}.pill:hover{border-color:var(--ink)}.pill.dark{background:var(--ink);color:#fff;border-color:var(--ink)}.key{display:inline-grid;place-items:center;min-width:1.5em;height:1.5em;border-radius:50%;background:var(--ink);color:#fff;font-weight:800}.dark .key{background:white;color:var(--ink)}
 #intro{position:fixed;inset:0;overflow:hidden;background:var(--paper)}#world{position:absolute;width:1920px;height:1080px;transform-origin:0 0;isolation:isolate;pointer-events:none}.piece,#screen{position:absolute}.piece{max-width:none}.piece img{width:100%;height:100%;max-width:none}#screen{overflow:hidden;background:#0c0d0e;border-radius:2px}#screen-content{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0}#screen-off{position:absolute;inset:0;background:#080909;display:grid;place-items:center;color:#ddd;font-size:24px;font-weight:800;letter-spacing:.12em;transition:opacity .23s ease}#screen.powered #screen-off{opacity:0}.intro-copy{position:absolute;top:6%;left:5%;right:5%;text-align:center;pointer-events:none;transition:opacity .25s}.intro-copy .kicker{font-size:clamp(10px,1.2vw,15px);letter-spacing:.2em;font-weight:800;color:var(--soft);margin-bottom:.65em}.intro-copy h1{font-size:clamp(27px,4.6vw,60px);letter-spacing:-.055em}.intro-copy p:last-child{margin-top:8px;font-size:clamp(12px,1.65vw,19px);color:var(--soft)}.intro-controls{position:absolute;bottom:max(4%,env(safe-area-inset-bottom));left:12px;right:12px;display:flex;justify-content:center;align-items:center;gap:10px;flex-wrap:wrap;transition:opacity .2s}.intro-busy .intro-copy,.intro-busy .intro-controls{opacity:0;pointer-events:none}.sound{margin-left:auto}.intro-sound{position:absolute;top:12px;right:12px}
 #app{min-height:100dvh}.shell{min-height:100dvh;max-width:1740px;margin:auto;padding:28px clamp(18px,4.7vw,86px) 17px;display:flex;flex-direction:column}.home-top{display:flex;justify-content:space-between;align-items:center;gap:12px}.profile{width:clamp(49px,5.4vw,78px);border-radius:50%}.status{display:flex;align-items:center;gap:8px;font-size:14px;font-variant-numeric:tabular-nums;font-weight:700}.battery{display:inline-block;width:30px;height:15px;border:2px solid currentColor;padding:2px;position:relative}.battery:after{position:absolute;content:"";right:-5px;top:3px;width:3px;height:5px;background:currentColor}.battery i{display:block;height:100%;background:currentColor;width:var(--charge,100%)}.home-name{font-size:clamp(26px,3vw,44px);letter-spacing:-.04em;margin-top:16px}.tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:clamp(10px,1.3vw,24px);margin:auto 0;padding:clamp(34px,7vh,110px) 0 clamp(28px,4.9vh,64px)}.tile{background:var(--tile);color:var(--tile-ink,#151c22);display:grid;justify-items:center;align-content:center;gap:8px;aspect-ratio:1;position:relative;min-width:0;padding:9%;transition:transform .14s ease,box-shadow .14s ease}.tile[aria-current=true]{box-shadow:0 0 0 4px var(--paper),0 0 0 7px var(--cyan)}.tile:not(:disabled):active{transform:scale(.97)}.tile strong{font-size:clamp(12px,1.4vw,23px);letter-spacing:.015em;white-space:nowrap}.tile small{font-size:clamp(9px,.96vw,16px)}.tile-icon{width:44%;aspect-ratio:1;display:grid;place-items:center;margin:0 0 5%;background:#fff;border-radius:50%;box-shadow:0 2px 6px #0002;overflow:hidden}.tile-icon img{width:100%;height:100%;object-fit:contain}.tile-icon.glyph img{width:58%;height:58%}.shortcuts{display:flex;justify-content:center;gap:clamp(8px,1.2vw,20px);flex-wrap:wrap;margin-bottom:24px}.shortcut{--shortcut-size:clamp(46px,5.8vw,104px);display:grid;align-content:start;justify-items:center;gap:8px;font-size:clamp(8px,.8vw,13px);font-weight:650;padding:4px}.shortcut img{width:var(--shortcut-size);height:var(--shortcut-size);object-fit:contain;border-radius:50%;box-shadow:0 2px 7px #0002}.shortcut:focus-visible{outline:none}.shortcut:not(:disabled):is(:hover,:focus-visible) img{outline:2px solid var(--cyan);outline-offset:3px}.shortcut:disabled{opacity:.7}.bar{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #8a8a8d;padding:14px 0 0;font-size:13px;margin-top:auto}.bar .actions{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.bar button{font-weight:700}.bar .hint{color:var(--soft)}.screen-home .shell{width:1920px;max-width:none;height:1080px;min-height:1080px;padding:50px 90px 28px}.screen-home .profile{width:78px}.screen-home .home-name{font-size:48px;margin-top:26px}.screen-home .tiles{gap:24px;padding:72px 0 54px;margin:auto 0}.screen-home .tile strong{font-size:26px}.screen-home .tile small{font-size:18px}.screen-home .shortcuts{gap:24px}.screen-home .shortcut{font-size:15px}.screen-home .shortcut{--shortcut-size:94px}.screen-home .bar{font-size:22px}.screen-home .status{font-size:22px}.screen-home .battery{width:35px;height:17px}
-.detail-top{display:flex;align-items:center;gap:13px;padding-bottom:16px;border-bottom:1px solid var(--line)}.detail-top h1{font-size:clamp(19px,3vw,34px);letter-spacing:.03em}.detail-top .status{margin-left:auto}.detail-grid{display:grid;grid-template-columns:175px minmax(0,1fr);gap:clamp(18px,4vw,60px);flex:1;padding:28px 0}.toc{display:flex;flex-direction:column;align-self:start;gap:8px}.toc button{text-align:left;padding:11px 12px;font-weight:700;font-size:13px}.toc button[aria-current=true]{outline:2px solid var(--cyan);background:white}.detail h2{font-size:clamp(25px,4vw,48px);letter-spacing:-.045em;margin-bottom:10px}.lead{color:var(--soft);line-height:1.68;max-width:72ch}.detail h3{margin-bottom:.55em}.content-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}.card{background:#fff;padding:clamp(15px,2.6vw,30px);border-radius:14px;line-height:1.65}.card p{color:#4e5058}.card a,.card button{display:inline-flex;margin-top:15px}.meta{display:inline-flex;letter-spacing:.12em;text-transform:uppercase;font-size:11px;font-weight:800;color:#08747b;margin-bottom:12px}.portfolio-figure{margin:22px 0 0}.portfolio-figure summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--soft);margin-bottom:10px}.portfolio-figure img{width:100%;border:1px solid var(--line);border-radius:10px}.card-list{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}.tag{border:1px solid var(--line);border-radius:22px;padding:5px 12px;font-size:13px}
+.detail-top{display:flex;align-items:center;gap:13px;padding-bottom:16px;border-bottom:1px solid var(--line)}.detail-top h1{font-size:clamp(19px,3vw,34px);letter-spacing:.03em}.detail-top .status{margin-left:auto}.detail-grid{display:grid;grid-template-columns:175px minmax(0,1fr);gap:clamp(18px,4vw,60px);flex:1;padding:28px 0}.toc{display:flex;flex-direction:column;align-self:start;gap:8px}.toc button{text-align:left;padding:11px 12px;font-weight:700;font-size:13px}.toc button[aria-current=true]{outline:2px solid var(--cyan);background:white}.detail h2{font-size:clamp(25px,4vw,48px);letter-spacing:-.045em;margin-bottom:10px}.lead{color:var(--soft);line-height:1.68;max-width:72ch}.detail h3{margin-bottom:.55em}.content-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:24px 0}.card{background:#fff;padding:clamp(15px,2.6vw,30px);border-radius:14px;line-height:1.65}.card p{color:#4e5058}.card a,.card button{display:inline-flex;margin-top:15px}.meta{display:inline-flex;letter-spacing:.12em;text-transform:uppercase;font-size:11px;font-weight:800;color:var(--acc-ink);margin-bottom:12px}.portfolio-figure{margin:22px 0 0}.portfolio-figure summary{cursor:pointer;font-size:14px;font-weight:700;color:var(--soft);margin-bottom:10px}.portfolio-figure img{width:100%;border:1px solid var(--line);border-radius:10px}.card-list{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}.tag{border:1px solid var(--line);border-radius:22px;padding:5px 12px;font-size:13px}
 @media(max-width:850px){#app .shell{padding-top:18px}#app .detail-grid{grid-template-columns:1fr;gap:18px}#app .toc{flex-direction:row;overflow:auto;padding:3px;white-space:nowrap}#app .toc button{padding:8px}#app .tiles{grid-template-columns:repeat(3,minmax(0,1fr));padding-top:32px;gap:14px}#app .tile strong{font-size:clamp(11px,2.4vw,20px)}#app .tile small{font-size:clamp(9px,1.8vw,15px)}#app .bar .hint{display:none}}
 @media(max-width:480px){#app .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}#app .content-grid{grid-template-columns:1fr}#app .detail-top .status{font-size:11px}.intro-copy{top:14%}.intro-sound{font-size:12px}.intro-controls{bottom:14%}.detail-top .pill{padding:.55em}.bar .actions{gap:8px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
@@ -45,12 +45,12 @@ html{scrollbar-gutter:stable}
 .toc .toc-entry:hover{background:#fff}
 .toc .toc-entry.child{padding-left:18px;font-size:clamp(11px,1vw,17px);font-weight:420}
 .toc-group-label{color:#707070}
-.toc .toc-entry[aria-current="page"]{background:#fff;outline:none;box-shadow:inset 0 0 0 4px #36cbd5,0 1px 6px #0003}
+.toc .toc-entry[aria-current="page"]{background:#fff;outline:none;box-shadow:inset 0 0 0 4px var(--cyan),0 1px 6px #0003}
 .toc .toc-entry[aria-current="page"]:before{position:absolute;content:"";left:6px;top:7px;bottom:7px;width:3px;background:#086afa}
 .toc .toc-entry.section-entry{padding-inline-start:24px;color:#51545b}
 .toc .toc-entry.nested{padding-inline-start:30px;font-size:clamp(11px,.95vw,16px);border-left:1px solid #d3d8da;margin-left:10px;width:calc(100% - 10px)}
 .toc .toc-entry.nested-section{padding-inline-start:40px}
-.toc .toc-entry[aria-current="location"]{color:#065d68;background:#e2f7f8;box-shadow:inset 2px 0 #20a6b3}
+.toc .toc-entry[aria-current="location"]{color:var(--acc-ink);background:var(--acc-soft);box-shadow:inset 2px 0 var(--acc-mid)}
 .toc .toc-entry:focus-visible{outline:2px solid #087ad7;outline-offset:2px}
 html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 
@@ -91,7 +91,7 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
   #app .toc .toc-entry,.toc-group-label{padding:8px 9px}
   .toc .toc-entry.child{font-size:11px}
   .toc .toc-entry br{display:none}
-  .toc .toc-entry[aria-current="page"]{box-shadow:inset 0 0 0 2px #36cbd5}
+  .toc .toc-entry[aria-current="page"]{box-shadow:inset 0 0 0 2px var(--cyan)}
   .toc .toc-entry[aria-current="page"]:before{display:none}
 }
 @media(max-width:480px){
@@ -104,12 +104,12 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 }
 
 .detail-shell .detail h2{font-size:clamp(30px,4.15vw,63px);line-height:1.08;letter-spacing:-.056em;max-width:23ch;margin-bottom:.22em}
-.case-result{width:fit-content;max-width:100%;margin:0 0 12px;padding:5px 10px;border-left:3px solid var(--cyan);background:#e2f7f8;color:#065d68;font-size:clamp(12px,1.2vw,16px);font-weight:750;line-height:1.45}
+.case-result{width:fit-content;max-width:100%;margin:0 0 12px;padding:5px 10px;border-left:3px solid var(--cyan);background:var(--acc-soft);color:var(--acc-ink);font-size:clamp(12px,1.2vw,16px);font-weight:750;line-height:1.45}
 .detail-shell .detail .lead{font-size:clamp(14px,1.23vw,20px);max-width:72ch;line-height:1.65}
 .detail-shell .card{border-radius:0;border-top:2px solid #d8d8dc}
 .detail-shell .card h3{font-size:clamp(17px,1.55vw,24px)}
 .eyebrow{font-size:11px;font-weight:800;letter-spacing:.16em;color:#526163;margin-bottom:13px}
-.eyebrow:before{content:"";display:inline-block;height:9px;width:9px;background:#27cbd6;margin-right:8px}
+.eyebrow:before{content:"";display:inline-block;height:9px;width:9px;background:var(--cyan);margin-right:8px}
 .section-label{display:flex;align-items:baseline;justify-content:space-between;gap:8px;border-bottom:1px solid #b9b9be;padding:0 0 9px;margin:24px 0 13px}
 .section-label h3{margin:0;font-size:clamp(17px,1.65vw,25px);letter-spacing:-.02em}
 .section-label span{font-size:10px;font-weight:750;letter-spacing:.12em;color:var(--soft);text-align:right}
@@ -126,11 +126,11 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 .feature-picker{display:flex;gap:6px;margin-bottom:10px}
 .feature-picker button{flex:1;text-align:left;border:1px solid var(--line);padding:9px 11px;background:#fff;font-size:clamp(12px,1.15vw,16px)}
 .feature-picker button span{font-size:.8em;color:#596063;margin-right:4px}
-.feature-picker button[aria-pressed="true"]{box-shadow:inset 0 -3px var(--cyan);color:#075d66;font-weight:750}
+.feature-picker button[aria-pressed="true"]{box-shadow:inset 0 -3px var(--cyan);color:var(--acc-ink);font-weight:750}
 .tag-row{display:flex;flex-wrap:wrap;gap:5px}
 .switch-tag{display:inline-flex;align-items:center;border:1px solid #d6d8db;padding:3px 7px;font-weight:700;font-size:10px;line-height:1.2;color:#41454a;background:#f6f6f7}
-.result-tag{position:relative;z-index:1;gap:4px;min-height:24px;border-color:#8bcfd2;background:#e2f7f8;color:#065d68;font-weight:800;text-decoration:none}
-.result-tag:hover,.result-tag:focus-visible{background:#c9eef0;text-decoration:underline}
+.result-tag{position:relative;z-index:1;gap:4px;min-height:24px;border-color:var(--acc-line);background:var(--acc-soft);color:var(--acc-ink);font-weight:800;text-decoration:none}
+.result-tag:hover,.result-tag:focus-visible{background:var(--acc-line);text-decoration:underline}
 .work-desc,.work-role{line-height:1.55;font-size:clamp(12px,1.02vw,15px)}
 .work-desc{color:#5a5d65}.work-role{color:#39424a;font-weight:650}
 .work-open{display:flex;align-items:center;gap:6px;color:#18191a;font-weight:750;font-size:12px;margin-top:3px}
@@ -140,10 +140,10 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 .work-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .work-filters{display:flex;gap:5px;flex-wrap:wrap}
 .work-filter{background:#fff;border:1px solid #cccdd2;padding:7px 10px;font-weight:650;font-size:12px;white-space:nowrap}
-.work-filter[aria-pressed="true"]{border-color:#30cbd5;box-shadow:inset 0 -3px #30cbd5;background:#eaffff;color:#125a62}
+.work-filter[aria-pressed="true"]{border-color:var(--cyan);box-shadow:inset 0 -3px var(--cyan);background:var(--acc-soft);color:var(--acc-ink)}
 .work-search{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:700;max-width:100%}
 .work-search input{background:white;border:1px solid #c6c7cd;padding:7px 9px;color:inherit;font:inherit;font-weight:400;min-width:0;max-width:100%}
-.work-search input:focus-visible{outline:2px solid #078a99;outline-offset:1px}
+.work-search input:focus-visible{outline:2px solid var(--acc-mid);outline-offset:1px}
 .work-count{font-size:12px;color:#555860;margin:10px 0 9px}
 .work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(14px,2vw,26px)}
 .work-card{flex-direction:column}
@@ -173,7 +173,7 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 .automation-step h4{font-size:20px;margin:0 0 16px}
 .automation-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
 .automation-columns>div+div{border-left:1px solid var(--line);padding-left:22px}
-.automation-columns span{display:block;font-size:14px;color:#08737d;font-weight:750;margin-bottom:7px}
+.automation-columns span{display:block;font-size:14px;color:var(--acc-ink);font-weight:750;margin-bottom:7px}
 .automation-columns p{font-size:16px;line-height:1.7;color:#4e5057}
 .case-reel-library .reel-thumbs{grid-auto-columns:100px;overflow-x:auto;overscroll-behavior-inline:contain;padding:3px;scrollbar-width:thin}
 @media(max-width:900px){.video-work-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -197,7 +197,7 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 .case-step.case-step-wide-photo .case-photo{aspect-ratio:auto}
 .case-step-wide-photo .case-photo img{height:auto}
 .case-step-copy{display:flex;gap:12px;align-items:flex-start}
-.step-index{flex:none;white-space:nowrap;font-size:13px;color:#076c76;font-weight:800;line-height:1.5}
+.step-index{flex:none;white-space:nowrap;font-size:13px;color:var(--acc-ink);font-weight:800;line-height:1.5}
 .case-step h4,.shelf-item h4{margin:0 0 6px;font-size:clamp(15px,1.4vw,21px)}
 .case-step p{font-size:clamp(13px,1.17vw,17px);line-height:1.6;color:#4e5057}
 .case-step figure,.case-gallery figure{margin:0;background:#f6f6f7}
@@ -214,14 +214,14 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 .reel-video>video{object-fit:contain}
 .reel-poster{display:grid;place-items:center;padding:0}
 .reel-poster span{position:absolute;display:grid;place-items:center;width:64px;height:64px;padding-left:3px;border-radius:50%;background:#15191eea;color:white;font-size:26px}
-.reel-poster:hover span{background:#087e87}
+.reel-poster:hover span{background:var(--acc-mid)}
 .reel-poster:focus-visible{outline-offset:-4px}
 .reel-controls{display:grid;grid-template-columns:34px minmax(0,1fr) 34px;align-items:stretch;gap:6px;margin-top:8px}
 .reel-prev,.reel-next{background:#f1f2f3;border:1px solid var(--line);font-size:24px;line-height:1}
-.reel-prev:hover,.reel-next:hover{background:#e1f6f8}
+.reel-prev:hover,.reel-next:hover{background:var(--acc-soft)}
 .reel-thumbs{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:6px}
 .reel-thumb{position:relative;aspect-ratio:16/9;min-height:36px;overflow:hidden;padding:0;border:2px solid #d4d7da;background:#15191e}
-.reel-thumb[aria-pressed="true"]{border-color:#087e87}
+.reel-thumb[aria-pressed="true"]{border-color:var(--acc-mid)}
 .reel-thumb img{width:100%;height:100%;object-fit:contain}
 .reel-thumb span{position:absolute;inset:0;display:grid;place-items:center;color:#fff;background:#0005;font-size:16px;text-shadow:0 1px 3px #000}
 .reel-footer{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:8px}
@@ -251,7 +251,7 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 .tool-intro{color:var(--soft);line-height:1.7;margin-bottom:16px}
 .tool-tabs{display:flex;gap:0;border-bottom:1px solid var(--line)}
 .tool-tabs button{padding:13px 20px;font-size:16px;font-weight:650;border:1px solid transparent;border-bottom:0}
-.tool-tabs button[aria-selected="true"]{background:#fff;border-color:var(--line);box-shadow:inset 0 3px #20cad7;color:#065d68}
+.tool-tabs button[aria-selected="true"]{background:#fff;border-color:var(--line);box-shadow:inset 0 3px var(--cyan);color:var(--acc-ink)}
 .tool-panel{background:#fff;border:1px solid var(--line);border-top:0}
 .tool-summary{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px;flex-wrap:wrap}
 .tool-summary p{font-size:14px;line-height:1.65;color:var(--soft);flex:1;min-width:220px}
@@ -263,7 +263,7 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 .profile-panel p:not(.work-role){line-height:1.58;color:#555960;margin-top:9px}
 .profile-history{display:grid;gap:0;background:#fff;border-top:3px solid var(--cyan)}
 .profile-history article{display:grid;grid-template-columns:minmax(140px,.27fr) minmax(0,1fr);gap:20px;padding:22px;border-bottom:1px solid var(--line)}
-.history-date{font-size:14px;color:#076c76;font-weight:700;line-height:1.6}
+.history-date{font-size:14px;color:var(--acc-ink);font-weight:700;line-height:1.6}
 .profile-history h4,.profile-tools h4{font-size:19px;margin:0 0 7px;line-height:1.4}
 .profile-history article>div>p,.profile-tool p{font-size:16px;line-height:1.7;color:#565c63}
 .profile-history .pill,.profile-tool .pill{font-size:13px;padding:.4em .7em;margin-top:10px}
@@ -281,18 +281,18 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 .profile-section{margin-top:58px;scroll-margin-top:16px}
 .profile-section .section-label{margin-top:0;padding-bottom:12px;border-bottom-color:#9a9ca2}
 .profile-section .section-label h3{font-size:clamp(23px,2.4vw,34px);font-weight:760}
-.profile-intro{grid-template-columns:150px minmax(0,1fr);gap:26px;padding:22px 26px;border-left:6px solid var(--cyan);margin-top:24px;background:linear-gradient(110deg,#fff 65%,#e5f7f8)}
+.profile-intro{grid-template-columns:150px minmax(0,1fr);gap:26px;padding:22px 26px;border-left:6px solid var(--cyan);margin-top:24px;background:linear-gradient(110deg,#fff 65%,var(--acc-soft))}
 .profile-intro img{align-self:center;aspect-ratio:1;border-radius:50%;border:6px solid #fff;box-shadow:0 3px 14px #233b421a}
 .profile-intro h3{font-size:32px;margin:7px 0;letter-spacing:-.04em}
 .profile-intro .profile-kicker{font-size:14px!important;font-weight:650;color:#526267!important;margin:0!important}
-.profile-intro .work-role{font-size:17px;color:#076875;font-weight:750}
-.profile-intro .profile-role-interest{font-size:17px;color:#076875;font-weight:750;margin:12px 0}
+.profile-intro .work-role{font-size:17px;color:var(--acc-ink);font-weight:750}
+.profile-intro .profile-role-interest{font-size:17px;color:var(--acc-ink);font-weight:750;margin:12px 0}
 .profile-intro .case-links{margin-top:14px}
 .profile-summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin-top:20px;border-block:1px solid #c3c8cb;padding-block:16px}
 .profile-summary article{padding:4px 20px}
 .profile-summary article:first-child{padding-left:0}
 .profile-summary article+article{border-left:1px solid #c3c8cb}
-.profile-summary article>span{font-size:14px;font-weight:750;color:#076875}
+.profile-summary article>span{font-size:14px;font-weight:750;color:var(--acc-ink)}
 .profile-summary h4{font-size:19px;line-height:1.4;letter-spacing:-.03em;margin:7px 0}
 .profile-summary p{font-size:15px;color:#535961;line-height:1.65}
 .profile-summary .pill{font-size:13px;margin-top:10px;padding:.35em .7em}
@@ -300,24 +300,24 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 .profile-history:before{content:"";position:absolute;top:6px;bottom:24px;left:3px;width:2px;background:#c7ced0}
 .profile-history article{position:relative;border:0;grid-template-columns:150px minmax(0,1fr);padding:0 0 28px 16px;gap:24px}
 .profile-history article:last-child{padding-bottom:0}
-.profile-history article:before{content:"";position:absolute;left:-21px;top:5px;width:10px;height:10px;border:2px solid #087e89;background:var(--paper);border-radius:50%}
+.profile-history article:before{content:"";position:absolute;left:-21px;top:5px;width:10px;height:10px;border:2px solid var(--acc-mid);background:var(--paper);border-radius:50%}
 .profile-history h4{font-size:21px}
 .profile-history .history-date{padding-top:2px}
 .profile-history article>div{padding-bottom:22px;border-bottom:1px solid #d4d7d9}
 .profile-history article:last-child>div{border:0;padding-bottom:0}
 .profile-evidence-list{display:grid;gap:34px}
 .profile-evidence{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(20px,3vw,42px);align-items:center;background:#fff;padding:22px}
-.profile-evidence:nth-child(even){grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);background:#e1f1f2}
+.profile-evidence:nth-child(even){grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);background:var(--acc-soft)}
 .profile-evidence:nth-child(even) .profile-evidence-image{order:2}
 .profile-evidence-image{display:block;padding:0;width:100%;background:#edf0f2;overflow:hidden}
 .profile-evidence-image img{display:block;width:100%;height:240px;object-fit:contain;transition:transform .2s}
 .profile-evidence-image:hover img{transform:scale(1.025)}
-.profile-evidence-context{font-size:14px!important;color:#076875!important;font-weight:700;margin:0 0 9px!important}
+.profile-evidence-context{font-size:14px!important;color:var(--acc-ink)!important;font-weight:700;margin:0 0 9px!important}
 .profile-evidence h4{font-size:clamp(22px,2.25vw,30px);line-height:1.3;letter-spacing:-.04em;margin:0 0 13px}
 .profile-evidence p{font-size:16px;line-height:1.75;color:#4e555c}
-.profile-evidence .profile-lesson{border-left:3px solid #16a8b5;padding-left:12px;margin-top:15px;color:#173d43;font-weight:700;font-size:15px}
+.profile-evidence .profile-lesson{border-left:3px solid var(--acc-mid);padding-left:12px;margin-top:15px;color:#173d43;font-weight:700;font-size:15px}
 .profile-evidence .pill{margin-top:15px;font-size:14px}
-.profile-evidence-featured{border-top:4px solid #35c9d4}
+.profile-evidence-featured{border-top:4px solid var(--cyan)}
 .profile-evidence-featured h4{font-weight:800}
 .profile-tool-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .profile-tool-card{background:#fff;border:1px solid #d7dadc;padding:22px;display:flex;flex-direction:column;align-items:flex-start;min-width:0}
@@ -335,11 +335,11 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 .profile-process article:last-child{border-bottom:0}
 .profile-process h4{font-size:21px;line-height:1.5;letter-spacing:-.035em;margin:0}
 .profile-process p{font-size:16px;line-height:1.75;color:#555d65}
-.profile-process article>span{grid-column:2;font-size:14px;font-weight:650;color:#08717c}
-.editing-ownership{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:18px 0 24px;background:#e3f3f4;border:1px solid #b6d6d9}
+.profile-process article>span{grid-column:2;font-size:14px;font-weight:650;color:var(--acc-ink)}
+.editing-ownership{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:18px 0 24px;background:var(--acc-soft);border:1px solid var(--acc-line)}
 .editing-ownership>div{padding:20px}
-.editing-ownership>div+div{border-left:1px solid #b6d6d9;background:#fff}
-.editing-ownership strong{display:block;color:#075f6a;font-size:19px;margin-bottom:8px}
+.editing-ownership>div+div{border-left:1px solid var(--acc-line);background:#fff}
+.editing-ownership strong{display:block;color:var(--acc-ink);font-size:19px;margin-bottom:8px}
 .editing-ownership p{font-size:16px;line-height:1.7;color:#3e555a}
 .profile-ownership{margin-top:28px}
 .profile-teaching{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.3fr);gap:28px;align-items:start}
@@ -368,7 +368,7 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 .profile-focus-list{display:grid;gap:0}
 .profile-focus-list article{display:grid;grid-template-columns:150px minmax(0,1fr);gap:10px 28px;border-bottom:1px solid #c9ced0;padding:24px 0}
 .profile-focus-list article:first-child{padding-top:0}
-.profile-focus-list article>span{grid-row:span 2;color:#08717c;font-size:16px;font-weight:750;line-height:1.5}
+.profile-focus-list article>span{grid-row:span 2;color:var(--acc-ink);font-size:16px;font-weight:750;line-height:1.5}
 .profile-focus-list h4{font-size:25px;letter-spacing:-.03em;line-height:1.4;margin:0}
 .profile-focus-list p{font-size:16px;line-height:1.75;color:#555d65}
 @media(max-width:1050px){.profile-tool-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.profile-evidence{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}.profile-summary h4{font-size:17px}.profile-process article{grid-template-columns:150px minmax(0,1fr)}}
@@ -394,7 +394,7 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
   .profile-focus-list article>span{grid-row:auto}
   .profile-focus-list h4{font-size:23px}
   .editing-ownership{grid-template-columns:1fr}
-  .editing-ownership>div+div{border-left:0;border-top:1px solid #b6d6d9}
+  .editing-ownership>div+div{border-left:0;border-top:1px solid var(--acc-line)}
 }
 @media(max-width:420px){.profile-tool-grid{grid-template-columns:1fr}.profile-intro{grid-template-columns:1fr}.profile-intro img{width:90px}.profile-tool-card{padding:20px}}
 @media(max-width:900px){.profile-strengths,.profile-tools{grid-template-columns:1fr}.profile-tool{display:grid;grid-template-columns:minmax(100px,.35fr) minmax(0,1fr);gap:6px 15px}.profile-tool .pill{grid-column:2;justify-self:start;margin-top:3px}.profile-tool strong{font-size:16px}}
@@ -431,7 +431,7 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 }
 
 /* Profile quick facts and mentoring card (2026-11-23) */
-.profile-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px;margin:16px 0 4px;padding-top:14px;border-top:1px solid #cfe1e3}
+.profile-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 24px;margin:16px 0 4px;padding-top:14px;border-top:1px solid var(--acc-line)}
 .profile-facts div{display:grid;grid-template-columns:78px minmax(0,1fr);gap:10px;align-items:baseline}
 .profile-facts dt{font-size:13px;font-weight:750;color:#56656a}
 .profile-facts dd{margin:0;font-size:15px;font-weight:650;line-height:1.5;color:#26333a;word-break:keep-all}
@@ -440,6 +440,95 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 @media(max-width:900px){.profile-facts{grid-template-columns:1fr}}
 @media(max-width:420px){.profile-intro{grid-template-columns:1fr}.profile-intro img{width:90px}}
 
+
+/* 2026-11-24: section accents carried over from the home tiles, read marks, documents, name card */
+:root{--acc-ink:#066672;--acc-soft:#e2f7f8;--acc-line:#b6d6d9;--acc-mid:#087e87}
+.detail-shell[data-accent=projects]{--cyan:#ffbc3f;--acc-ink:#7a4d00;--acc-soft:#fff3d9;--acc-line:#ecd49c;--acc-mid:#b97a00}
+.detail-shell[data-accent=play]{--cyan:#174cea;--acc-ink:#143fc4;--acc-soft:#e8eeff;--acc-line:#b9c8f5;--acc-mid:#174cea}
+.detail-shell[data-accent=fandom]{--cyan:#31cd77;--acc-ink:#0f6b3a;--acc-soft:#e3f7eb;--acc-line:#b3dcc4;--acc-mid:#1a9a55}
+.detail-shell[data-accent=design]{--cyan:#ff2529;--acc-ink:#b3161a;--acc-soft:#ffeaea;--acc-line:#f0bcbc;--acc-mid:#d81f23}
+.section-chip{flex:none;display:grid;place-items:center;width:clamp(32px,2.7vw,42px);aspect-ratio:1;background:var(--chip,var(--cyan))}
+.section-chip img{width:64%;height:64%;border-radius:50%;background:#fff;object-fit:cover}
+.detail-shell .detail-top{gap:12px}
+.home-status{display:grid;justify-items:end;gap:5px}
+.read-count{font-size:13px;font-weight:600;color:var(--soft)}
+.home-role{font-size:clamp(14px,1.25vw,19px);color:var(--soft);font-weight:600;margin-top:6px}
+.tile-read{position:absolute;top:6%;right:6%;font-style:normal;font-size:clamp(12px,.85vw,14px);font-weight:750;line-height:1;padding:.42em .65em;border-radius:99px;background:#fff;color:#1c2126;box-shadow:0 1px 4px #0003}
+#toast{position:fixed;left:50%;bottom:calc(var(--action-bar-height,52px) + 18px);transform:translate(-50%,12px);background:#202327;color:#fff;padding:.8em 1.15em;border-radius:10px;font-weight:700;font-size:15px;line-height:1.5;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:20;max-width:calc(100% - 32px);text-align:center}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+/* text that was 10–12px */
+.meta,.eyebrow{font-size:13px}
+.section-label span{font-size:12px}
+.switch-tag{font-size:12.5px;padding:4px 8px}
+.work-open,.library-jump .pill,.work-count,.case-meta dt,.case-step figcaption,.case-gallery figcaption,.reel-footer .pill,.lecture-slide-grid figcaption>span{font-size:13px}
+.work-filter,.work-search{font-size:13.5px}
+.shelf-item h4{font-size:clamp(15px,1.2vw,18px)}
+.shelf-item p{font-size:14px;line-height:1.5}
+.toc-caption{font-size:clamp(12px,.88vw,15px)}
+.toc .toc-entry,.toc-group-label{font-size:clamp(13.5px,1.1vw,19px)}
+.toc .toc-entry.child{font-size:clamp(13px,1vw,17px)}
+.toc .toc-entry.nested{font-size:clamp(13px,.95vw,16px)}
+.bar{font-size:14px}
+.tile strong{font-size:clamp(13px,1.4vw,23px)}
+.tile small{font-size:clamp(12px,.96vw,16px)}
+.shortcut{font-size:clamp(12px,.9vw,14.5px)}
+.intro-copy .kicker{font-size:clamp(12px,1.2vw,15px)}
+.power-hint{font-size:clamp(12px,1.1vw,15px)}
+.intro-tools .pill{font-size:clamp(12px,1.08vw,14px)}
+@media(max-width:850px){
+  #app .tile strong,#screen-content .tile strong{font-size:clamp(13px,2.4vw,20px)}
+  #app .tile small,#screen-content .tile small{font-size:clamp(12px,1.8vw,15px)}
+  .toc .toc-entry.child{font-size:13px}
+}
+@media(max-width:480px){
+  #app .detail-top .status{font-size:12.5px}
+  #app .bar,#app .bar .page-navigation .pill{font-size:13px}
+  .detail-shell .detail-top{flex-wrap:nowrap}
+  .detail-shell .detail-top h1{order:0;flex-basis:auto}
+  .tile-read{top:5%;right:5%}
+}
+.detail :is(h2,h3,h4)[tabindex="-1"]:focus{outline:none}
+.reel-controls>*{min-width:0}
+@media(max-width:480px){.reel-stage{min-height:0}}
+@media(max-width:650px){.reel-thumbs{grid-auto-columns:58px;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin}}
+/* documents (DESIGN) */
+.doc-list{display:grid;gap:14px}
+.doc-card{display:grid;grid-template-columns:clamp(92px,11vw,140px) minmax(0,1fr);gap:clamp(16px,2.4vw,30px);background:#fff;border:1px solid #d7dadc;padding:clamp(14px,1.8vw,22px)}
+.doc-cover{aspect-ratio:3/4;align-self:start;background:var(--cyan);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:12px;font-weight:800}
+.doc-cover span{font-size:13px;line-height:1.3}
+.doc-cover b{font-size:clamp(28px,3.2vw,44px);line-height:1;letter-spacing:-.04em}
+.doc-copy{display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0}
+.doc-copy h4{font-size:clamp(19px,1.9vw,27px);line-height:1.3;letter-spacing:-.03em;margin:2px 0 0}
+.doc-copy p{font-size:16px;line-height:1.7;color:#555d65}
+.doc-copy .doc-meta{font-size:14px;color:var(--acc-ink);font-weight:700}
+.doc-copy .case-links{margin-top:auto;padding-top:6px}
+.doc-card.pending{background:transparent;border-style:dashed;border-color:#b9bdc2}
+.doc-card.pending .doc-cover{background:#c3c6cb}
+.doc-section{margin-top:44px}
+.doc-section:first-of-type{margin-top:26px}
+.doc-section .section-label{margin-top:0}
+/* name card and contact */
+.contact-block{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:clamp(20px,3vw,44px);align-items:start;margin-top:22px}
+.namecard{position:relative;aspect-ratio:9/5;container-type:inline-size;background:#fff;box-shadow:0 1px 2px #0002,0 14px 34px #1b2a3322;display:flex;flex-direction:column;padding:7.5% 7.5% 0;overflow:hidden}
+.namecard p{margin:0}
+.namecard-kicker{font-size:11px;font-size:max(10.5px,2.6cqw);font-weight:800;letter-spacing:.2em;color:#6a7178}
+.namecard-name{font-size:38px;font-size:9.6cqw;font-weight:800;letter-spacing:-.05em;line-height:1.15;margin-top:3.2cqw!important;color:#16191c}
+.namecard-role{font-size:15px;font-size:max(12.5px,3.6cqw);font-weight:650;color:#3d444b;margin-top:.8cqw!important}
+.namecard-photo{position:absolute;top:8%;right:6.5%;width:17%;aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 0 1px #d9dce0}
+.namecard-lines{margin:auto 0 5.2cqw;display:grid;gap:.9cqw;font-size:14px;font-size:max(12.5px,3.45cqw)}
+.namecard-lines div{display:flex;gap:2.4cqw;align-items:baseline}
+.namecard-lines dt{font-weight:800;color:#8a9097;width:1.2em}
+.namecard-lines dd{margin:0;font-weight:650;color:#22272c;word-break:break-all}
+.namecard-strip{display:grid;grid-template-columns:repeat(5,1fr);height:3.4%;margin:0 -9%;flex:none}
+.contact-list{display:grid;margin:0;background:#fff;border-top:2px solid #d8d8dc}
+.contact-list>div{display:grid;grid-template-columns:88px minmax(0,1fr);gap:6px 18px;padding:15px 20px;border-bottom:1px solid #e3e4e8;align-items:center}
+.contact-list dt{font-size:14px;font-weight:750;color:var(--acc-ink)}
+.contact-list dd{margin:0;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between}
+.contact-list dd>span{font-size:16px;font-weight:650;line-height:1.5;word-break:break-all}
+.contact-list .case-links{margin-top:0}
+.contact-list .pill{font-size:13.5px;padding:.5em .85em}
+@media(max-width:980px){.contact-block{grid-template-columns:1fr}.namecard{width:min(100%,440px)}}
+@media(max-width:480px){.contact-list>div{grid-template-columns:1fr;padding:14px 16px}.doc-card{grid-template-columns:72px minmax(0,1fr)}.doc-cover{padding:8px}.doc-cover span{font-size:12px}}
 </style></head><body>
 <section id="intro" aria-label="포트폴리오 시작 화면">
   <div id="world" aria-hidden="true"><div id="screen"><div id="screen-off"><span id="off-label"></span></div></div></div>
@@ -449,8 +538,8 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
   <button id="start" type="button" aria-label="홈 버튼으로 시작하기"><span class="power-led" aria-hidden="true"></span><span id="start-label" class="power-hint">홈 버튼을 눌러 시작</span></button>
 </section>
 <main id="app" hidden><div id="home-host"></div><div id="detail-host" hidden></div></main>
-<template id="home-template"><section class="shell" aria-label="홈 메뉴"><header class="home-top"><img class="profile" alt="이호진 프로필" data-image="home/profile.png"><div class="status">100% <span class="battery" aria-hidden="true"><i></i></span></div></header><h1 class="home-name" tabindex="-1">이호진</h1><nav class="tiles" aria-label="주 메뉴"></nav><nav class="shortcuts" aria-label="바로가기"></nav><footer class="bar"><span class="hint">방향키 선택 · Enter 열기 · Esc 뒤로</span><div class="actions"><button data-sound aria-pressed="true">효과음 켜짐</button><button data-action="leave"><span class="key">B</span> 종료</button><button data-action="activate"><span class="key">A</span> 열기</button></div></footer></section></template>
-<script id="asset-data">window.PACK={"home/activities.svg":"assets/35092d66e2bb3392457d.svg","home/design.svg":"assets/b8800a644c4b688fb6a2.svg","home/fandom.svg":"assets/911dfaf46b6df074faa9.svg","home/footer.svg":"assets/5613ac14a543d3374300.svg","home/play-log.svg":"assets/2d0c16ded17e3af98a25.svg","home/profile.png":"assets/23d195ccd07fce3837d5.png","home/shortcut-contact.svg":"assets/14de551249e75c4bbebb.svg","home/shortcut-design.svg":"assets/c385f0864897f2ea2cfa.svg","home/shortcut-gallery.svg":"assets/1265931877e06a0daf38.svg","home/shortcut-highlights.svg":"assets/3c71d24e6c51ff52e91a.svg","home/shortcut-outro.svg":"assets/9cee8a385e5085188d4c.svg","home/shortcut-toolset.svg":"assets/47c36de4fe5f0f3d0a98.svg","home/shortcut-why-me.svg":"assets/4214e527fcd62d85bdd3.svg","home/status.svg":"assets/8db265c5cbc526a0259a.svg","intro/device.svg":"assets/d05d4764ba16711d10be.svg","intro/left-hand-back.svg":"assets/5b743cc39309be3d97a8.svg","intro/left-thumb-front.svg":"assets/3e6e8b57c9d0340fb2b0.svg","intro/right-hand-back.svg":"assets/2dcce740d06f8be6093c.svg","intro/right-thumb-front.svg":"assets/434ba3f4d7eb8f556546.svg","folio/about.png":"assets/4626b76ba6007a8351f8.png","folio/direction.png":"assets/642d0fa4b627f0a30e9b.png","folio/work.png":"assets/f909d6415d5b2565efee.png","folio/project1.png":"assets/02f235381c6b5c5e0f15.png","folio/project2.png":"assets/359fc002985b46999f45.png","folio/others.png":"assets/fe59f5da16ff3742417c.png","folio/more-games.png":"assets/50a5d5e6caae00d3dcd3.png","folio/fandom.png":"assets/7d2b805f727aa8e9f3da.png","media/blender-lecture-basics.png":"assets/63c7070fac5893a788bf.png","media/blender-lecture-character.png":"assets/76d4c4133180a7627b46.png","media/blender-lecture-ears.png":"assets/82f8394d52cede2a30d4.png","media/blender-lecture-subdivision.png":"assets/314dce68c9b2432eb827.png","media/concert.png":"assets/c2f592fd2900689fffda.png","media/dolby-concept.jpg":"assets/2ac9474602436b46f5c7.jpg","media/dolby-goal.jpg":"assets/84d7b4dbddc357a4c969.jpg","media/dolby-journey.jpg":"assets/609d25b9da2bc9e7b9ba.jpg","media/dolby-survey.jpg":"assets/c2d42e3492756e430904.jpg","media/dolby-tools.jpg":"assets/62919747521bfdfd4227.jpg","media/dolby.jpg":"assets/52baba3c63ecb4b664e7.jpg","media/dss-eval.jpg":"assets/6696aafd6733f14030b5.jpg","media/dss-flow.jpg":"assets/2d471222c51d7098424f.jpg","media/dss-journey.jpg":"assets/90b1d629b502980ec33b.jpg","media/dss-model.jpg":"assets/00dbfd02ac9271ad5481.jpg","media/dss-persona.jpg":"assets/1f5858b712292642606d.jpg","media/dss-range.jpg":"assets/a43cbd26e07d20420a26.jpg","media/dss-storyboard.jpg":"assets/5d98494b4e2f7568f198.jpg","media/dss.jpg":"assets/2b1e3f3b944552cd4c1d.jpg","media/editing-g-three.jpg":"assets/d7070393f7bf8961f53e.jpg","media/editing-k-four.jpg":"assets/371947624d838241e8fe.jpg","media/editing-komo.jpg":"assets/724df9c7e05e62de2bb0.jpg","media/editing-mcx.jpg":"assets/9d6c24eaf81f9a117810.jpg","media/editing-red-loot.jpg":"assets/eb1d8767eefcd7e5e99e.jpg","media/editing-thumbnail.jpg":"assets/9be5b06fb1d77ffdb51e.jpg","media/editing-tide-team.jpg":"assets/2f46b922a268ca6df45c.jpg","media/extraction-ai.jpg":"assets/a6cb68eef44d2840fc8e.jpg","media/extraction-concept.jpg":"assets/b5d6275d0f20266f2813.jpg","media/extraction-goal.jpg":"assets/3c41bb2c3cc1c2f1ffb8.jpg","media/extraction-inventory.jpg":"assets/beed3f9839e8328a0451.jpg","media/extraction-loop.jpg":"assets/5f9cd0b3f1c45de036d0.jpg","media/extraction-map.jpg":"assets/9b82532c09709fcf9853.jpg","media/extraction-play.jpg":"assets/e5573f3132147aa963ed.jpg","media/extraction-run.jpg":"assets/703811160095a1f9f878.jpg","media/extraction-tools.jpg":"assets/a4c90c265e8dfc523012.jpg","media/extraction.jpg":"assets/bf481e6e1984f715c2f6.jpg","media/filmcraft-caption-editor.png":"assets/a66bb4e82a61a32bc8b8.png","media/filmcraft-caption-match.png":"assets/2d4238bc2d0706199bf0.png","media/filmcraft-caption-test.png":"assets/06070b1c13117767f09c.png","media/filmcraft-editor.png":"assets/3d26cba8d130c67390ed.png","media/filmcraft-timeline.png":"assets/28afd359df7568ae0ea0.png","media/filmcraft-workflow.svg":"assets/0b10c48674adcf73eaf1.svg","media/forum-discussion.jpg":"assets/dc1ae9440e508a889333.jpg","media/forum-workshop.jpg":"assets/9181fe5b6bec267ffe12.jpg","media/forum.jpg":"assets/4944b6eaf8be78c62665.jpg","media/game-0.png":"assets/591abc00d6af93e7cbd0.png","media/game-1.png":"assets/0b631f673ffaad0ecc12.png","media/game-2.png":"assets/8957bb0bfc81510f38d1.png","media/game-3.png":"assets/b4df868f9f33024ec7b4.png","media/game-4.png":"assets/d2bb7865439fff2832f3.png","media/komia-development.png":"assets/336bf742bd65691be8e2.png","media/komia-evaluation.png":"assets/44caeb2e2ad75573d740.png","media/komia-immersion.png":"assets/8b2802b88ff54c2617dc.png","media/komia-improvements.png":"assets/b12510c63690b270422b.png","media/komia-planning.png":"assets/ac46947da1d14ecf9936.png","media/lovelive.png":"assets/ffe8d0ac36baaa4f5321.png","media/metaverse-demo.jpg":"assets/09ce622bac7ac6353edc.jpg","media/metaverse-event.jpg":"assets/d60e63e11ff69a7a93a0.jpg","media/metaverse.jpg":"assets/b1598d3f04ddbc044328.jpg","media/more-0.png":"assets/64fdbce587ba992b37ec.png","media/more-1.png":"assets/c3bc8f2e3fc2b4d980d9.png","media/more-10.png":"assets/c5516a967d04e556d0b3.png","media/more-11.png":"assets/62427e2e0002c0d5d164.png","media/more-12.png":"assets/ede3dab35be148249256.png","media/more-13.png":"assets/d00f3c2853e4c3f7a213.png","media/more-14.png":"assets/1fc4b8ea2a97e22e22e2.png","media/more-2.png":"assets/b9a6959e206b997ba4ce.png","media/more-3.png":"assets/d5a4d85d54740045e9d3.png","media/more-4.png":"assets/2c69977a639805dcf52d.png","media/more-5.png":"assets/fbd7484312fc8d378c45.png","media/more-6.png":"assets/55679c55dfb71d2a5cb4.png","media/more-7.png":"assets/d318cbbd138f548cfbe9.png","media/more-8.png":"assets/0cdcc2da9c96d28178be.png","media/more-9.png":"assets/8b1acb311ddd79a548da.png","media/policy-discussion.jpg":"assets/23f5d4e1361902cd64f1.jpg","media/policy-research-more.png":"assets/473c1cfb14afb90c06da.png","media/policy-research.png":"assets/3affc7c51337b0ea097d.png","media/policy-workshop.jpg":"assets/9151be5c5494782d2f85.jpg","media/policy.jpg":"assets/0a8997fab8d8754d71a2.jpg","media/profile.png":"assets/a8e5d028a05e38e8194b.png","media/ramen-play.png":"assets/3bc3aad94ba1f5e5b346.png","media/ramen-press.jpg":"assets/3d355b9d3221357e9a30.jpg","media/ramen-ui.png":"assets/d5713a987164c0cd7702.png","media/ramen-visit-lab.jpg":"assets/5dd1a7e07e634cde170b.jpg","media/ramen-visit.png":"assets/7fa205b398d3d89a745e.png","media/ramen.jpg":"assets/28a0303644ef823aef53.jpg","media/roblox-boss.jpg":"assets/de535a5405f3c5bff40c.jpg","media/roblox-escape.jpg":"assets/dc0f01495ead4cbf59c0.jpg","media/roblox-loot.jpg":"assets/355697af844e36796ae3.jpg","media/roblox-report.jpg":"assets/2cf174cc0d6ee9787693.jpg","media/roblox.jpg":"assets/2496098b28bf1fa6e6c3.jpg","media/shinkai.png":"assets/ff20f4c69b5aa06843b7.png","media/simulation-balance.jpg":"assets/63b2e4fd8fc7da074673.jpg","media/simulation-logic.jpg":"assets/3c9e1ca12370479c001a.jpg","media/simulation-problem.jpg":"assets/c1457d7e9b70a46ee17e.jpg","media/simulation-vision.jpg":"assets/68400799052a3ef595b9.jpg","media/simulation.jpg":"assets/f93738c58c408e3f8838.jpg","media/srpg-grid.jpg":"assets/b8a3d7b2115df4885b46.jpg","media/srpg-menu.jpg":"assets/1148d8ab277c2fc0f5d4.jpg","media/srpg-range.jpg":"assets/472c26d00341bdf70be2.jpg","media/srpg.jpg":"assets/a644882f540b01fb04af.jpg","media/tool-aftereffects.svg":"assets/09562fca2b8088a28105.svg","media/tool-blender.svg":"assets/5bc649b99a194452082c.svg","media/tool-claude.svg":"assets/2f5845f7f2245b513583.svg","media/tool-figma.svg":"assets/d37c2bf1a1d4f10aeffb.svg","media/tool-filmcraft.png":"assets/7ca8adb57a34d1f4bff8.png","media/tool-openai.svg":"assets/2b4a04ddc2395b20d168.svg","media/tool-premiere.svg":"assets/e2417b58620eaf613e50.svg","media/tool-subtitleedit.png":"assets/dac76c5c0efaf1710a97.png","media/tool-swift.svg":"assets/46b6e4abd3ab12c589b8.svg","media/tool-unity.svg":"assets/92f5736155fc1d6a4829.svg","media/tool-vrew.png":"assets/d8684d348d0c96eb8ea9.png","media/tosian-result.png":"assets/e25bdb1e10b24f49c9a1.png","media/tosian-scene.png":"assets/8ff6c6c0101da63a5767.png","media/tosian-ui.png":"assets/802d15350dad4d3f3315.png","media/tosian.jpg":"assets/779b8a649aa4c7ef6677.jpg","media/turtle-counsel.png":"assets/221371a3dfc42aff3671.png","media/turtle-diary.png":"assets/c82caedae46683dcb680.png","media/turtle-home.png":"assets/06c52dd33d89d40cbfab.png","media/turtle-stage-four.png":"assets/36359ef84abee5cb57c3.png","media/turtle-stage-one.png":"assets/e73ddb36c716e7f4d482.png","media/turtle-stage-three.png":"assets/2e21ef9c0d5ded0fa7f8.png","media/turtle-stage-two.png":"assets/7abde74f25e9622dd5c9.png","media/turtle.jpg":"assets/a56ee36c238124d69acf.jpg","media/venta-dfd.jpg":"assets/5d943cc1209e06449a2d.jpg","media/venta-problem.jpg":"assets/9880d3b90b2d4b421407.jpg","media/venta-result.jpg":"assets/fb14429d82fa31c6bd5c.jpg","media/venta-scenario.jpg":"assets/b2626019160299938a4a.jpg","media/venta-test.jpg":"assets/fa46fd04ba86b2835e53.jpg","media/venta.jpg":"assets/b056c4c3fec0325e96a5.jpg"};window.SCENE={"figma":"https://www.figma.com/design/DdpWS1rdEm68pVvrktkEOg?node-id=228-3302","units":"px","introCanvas":[1920,1080],"canvasBackground":"#f0f0f0","sceneLayers":[{"asset":"intro/left-hand-back.svg","bounds":[85,245,1254,835]},{"asset":"intro/right-hand-back.svg","bounds":[584,245,1254,835]},{"asset":"intro/device.svg","bounds":[348.401,297.443,1224,505]},{"role":"interactive-home-viewport","bounds":[640.993,368.936,635.461,357.447],"reference":"references/embedded-home.png"},{"asset":"intro/left-thumb-front.svg","bounds":[85,245,1254,835]},{"asset":"intro/right-thumb-front.svg","bounds":[584,245,1254,835]}],"home":{"reference":"references/home.png","canvas":[1920,1080],"tileRowBounds":[90,310,1740,332],"tiles":[["ABOUT ME","\uc790\uae30\uc18c\uac1c","home/profile.png"],["ACTIVITIES","\ub300\uc678\ud65c\ub3d9","home/activities.svg"],["PLAY LOG","\uac8c\uc784 \ud50c\ub808\uc774","home/play-log.svg"],["FANDOM","\uc11c\ube0c\uceec\ucc98","home/fandom.svg"],["DESIGN","\ubbf8\uad6c\ud604","home/design.svg"]],"shortcuts":["CONTACT","HIGHLIGHTS","DESIGN","GALLERY","TOOLSET","WHY ME","OUTRO"],"statusAndFooterAreVisualReferences":true}};</script>
+<template id="home-template"><section class="shell" aria-label="홈 메뉴"><header class="home-top"><img class="profile" alt="이호진 프로필" data-image="home/profile.png"><div class="home-status"><div class="status" title="읽지 않은 페이지만큼 배터리가 남습니다">100% <span class="battery" aria-hidden="true"><i></i></span></div><small class="read-count"></small></div></header><h1 class="home-name" tabindex="-1">이호진</h1><p class="home-role">UX/UI · 시스템 및 콘텐츠 기획</p><nav class="tiles" aria-label="주 메뉴"></nav><nav class="shortcuts" aria-label="바로가기"></nav><footer class="bar"><span class="hint">방향키 선택 · Enter 열기 · Esc 뒤로 · 읽은 페이지만큼 배터리가 줄어듭니다</span><div class="actions"><button data-sound aria-pressed="true">효과음 켜짐</button><button data-action="leave"><span class="key">B</span> 종료</button><button data-action="activate"><span class="key">A</span> 열기</button></div></footer></section></template>
+<script id="asset-data">window.PACK={"home/activities.svg":"assets/35092d66e2bb3392457d.svg","home/design.svg":"assets/b8800a644c4b688fb6a2.svg","home/fandom.svg":"assets/911dfaf46b6df074faa9.svg","home/footer.svg":"assets/5613ac14a543d3374300.svg","home/play-log.svg":"assets/2d0c16ded17e3af98a25.svg","home/profile.png":"assets/23d195ccd07fce3837d5.png","home/shortcut-contact.svg":"assets/14de551249e75c4bbebb.svg","home/shortcut-design.svg":"assets/c385f0864897f2ea2cfa.svg","home/shortcut-gallery.svg":"assets/1265931877e06a0daf38.svg","home/shortcut-highlights.svg":"assets/3c71d24e6c51ff52e91a.svg","home/shortcut-outro.svg":"assets/9cee8a385e5085188d4c.svg","home/shortcut-toolset.svg":"assets/47c36de4fe5f0f3d0a98.svg","home/shortcut-why-me.svg":"assets/4214e527fcd62d85bdd3.svg","home/status.svg":"assets/8db265c5cbc526a0259a.svg","intro/device.svg":"assets/d05d4764ba16711d10be.svg","intro/left-hand-back.svg":"assets/5b743cc39309be3d97a8.svg","intro/left-thumb-front.svg":"assets/3e6e8b57c9d0340fb2b0.svg","intro/right-hand-back.svg":"assets/2dcce740d06f8be6093c.svg","intro/right-thumb-front.svg":"assets/434ba3f4d7eb8f556546.svg","folio/about.png":"assets/4626b76ba6007a8351f8.webp","folio/direction.png":"assets/642d0fa4b627f0a30e9b.webp","folio/work.png":"assets/f909d6415d5b2565efee.webp","folio/project1.png":"assets/02f235381c6b5c5e0f15.webp","folio/project2.png":"assets/359fc002985b46999f45.webp","folio/others.png":"assets/fe59f5da16ff3742417c.webp","folio/more-games.png":"assets/50a5d5e6caae00d3dcd3.webp","folio/fandom.png":"assets/7d2b805f727aa8e9f3da.webp","media/blender-lecture-basics.png":"assets/63c7070fac5893a788bf.webp","media/blender-lecture-character.png":"assets/76d4c4133180a7627b46.webp","media/blender-lecture-ears.png":"assets/82f8394d52cede2a30d4.webp","media/blender-lecture-subdivision.png":"assets/314dce68c9b2432eb827.webp","media/concert.png":"assets/c2f592fd2900689fffda.png","media/dolby-concept.jpg":"assets/2ac9474602436b46f5c7.jpg","media/dolby-goal.jpg":"assets/84d7b4dbddc357a4c969.jpg","media/dolby-journey.jpg":"assets/609d25b9da2bc9e7b9ba.jpg","media/dolby-survey.jpg":"assets/c2d42e3492756e430904.jpg","media/dolby-tools.jpg":"assets/62919747521bfdfd4227.webp","media/dolby.jpg":"assets/52baba3c63ecb4b664e7.webp","media/dss-eval.jpg":"assets/6696aafd6733f14030b5.jpg","media/dss-flow.jpg":"assets/2d471222c51d7098424f.jpg","media/dss-journey.jpg":"assets/90b1d629b502980ec33b.jpg","media/dss-model.jpg":"assets/00dbfd02ac9271ad5481.jpg","media/dss-persona.jpg":"assets/1f5858b712292642606d.jpg","media/dss-range.jpg":"assets/a43cbd26e07d20420a26.jpg","media/dss-storyboard.jpg":"assets/5d98494b4e2f7568f198.webp","media/dss.jpg":"assets/2b1e3f3b944552cd4c1d.jpg","media/editing-g-three.jpg":"assets/d7070393f7bf8961f53e.jpg","media/editing-k-four.jpg":"assets/371947624d838241e8fe.webp","media/editing-komo.jpg":"assets/724df9c7e05e62de2bb0.webp","media/editing-mcx.jpg":"assets/9d6c24eaf81f9a117810.webp","media/editing-red-loot.jpg":"assets/eb1d8767eefcd7e5e99e.webp","media/editing-thumbnail.jpg":"assets/9be5b06fb1d77ffdb51e.webp","media/editing-tide-team.jpg":"assets/2f46b922a268ca6df45c.webp","media/extraction-ai.jpg":"assets/a6cb68eef44d2840fc8e.jpg","media/extraction-concept.jpg":"assets/b5d6275d0f20266f2813.webp","media/extraction-goal.jpg":"assets/3c41bb2c3cc1c2f1ffb8.jpg","media/extraction-inventory.jpg":"assets/beed3f9839e8328a0451.jpg","media/extraction-loop.jpg":"assets/5f9cd0b3f1c45de036d0.jpg","media/extraction-map.jpg":"assets/9b82532c09709fcf9853.jpg","media/extraction-play.jpg":"assets/e5573f3132147aa963ed.webp","media/extraction-run.jpg":"assets/703811160095a1f9f878.jpg","media/extraction-tools.jpg":"assets/a4c90c265e8dfc523012.webp","media/extraction-cover.webp":"assets/extraction-cover.webp","media/extraction.jpg":"assets/bf481e6e1984f715c2f6.webp","media/filmcraft-caption-editor.png":"assets/a66bb4e82a61a32bc8b8.webp","media/filmcraft-caption-match.png":"assets/2d4238bc2d0706199bf0.png","media/filmcraft-caption-test.png":"assets/06070b1c13117767f09c.png","media/filmcraft-editor.png":"assets/3d26cba8d130c67390ed.png","media/filmcraft-timeline.png":"assets/28afd359df7568ae0ea0.webp","media/filmcraft-workflow.svg":"assets/0b10c48674adcf73eaf1.svg","media/forum-discussion.jpg":"assets/dc1ae9440e508a889333.webp","media/forum-workshop.jpg":"assets/9181fe5b6bec267ffe12.webp","media/forum.jpg":"assets/4944b6eaf8be78c62665.webp","media/game-0.png":"assets/591abc00d6af93e7cbd0.png","media/game-1.png":"assets/0b631f673ffaad0ecc12.png","media/game-2.png":"assets/8957bb0bfc81510f38d1.png","media/game-3.png":"assets/b4df868f9f33024ec7b4.png","media/game-4.png":"assets/d2bb7865439fff2832f3.png","media/komia-development.png":"assets/336bf742bd65691be8e2.webp","media/komia-evaluation.png":"assets/44caeb2e2ad75573d740.webp","media/komia-immersion.png":"assets/8b2802b88ff54c2617dc.webp","media/komia-improvements.png":"assets/b12510c63690b270422b.webp","media/komia-planning.png":"assets/ac46947da1d14ecf9936.webp","media/lovelive.png":"assets/ffe8d0ac36baaa4f5321.png","media/metaverse-demo.jpg":"assets/09ce622bac7ac6353edc.webp","media/metaverse-event.jpg":"assets/d60e63e11ff69a7a93a0.webp","media/metaverse.jpg":"assets/b1598d3f04ddbc044328.webp","media/more-0.png":"assets/64fdbce587ba992b37ec.png","media/more-1.png":"assets/c3bc8f2e3fc2b4d980d9.png","media/more-10.png":"assets/c5516a967d04e556d0b3.png","media/more-11.png":"assets/62427e2e0002c0d5d164.png","media/more-12.png":"assets/ede3dab35be148249256.png","media/more-13.png":"assets/d00f3c2853e4c3f7a213.png","media/more-14.png":"assets/1fc4b8ea2a97e22e22e2.png","media/more-2.png":"assets/b9a6959e206b997ba4ce.png","media/more-3.png":"assets/d5a4d85d54740045e9d3.png","media/more-4.png":"assets/2c69977a639805dcf52d.png","media/more-5.png":"assets/fbd7484312fc8d378c45.png","media/more-6.png":"assets/55679c55dfb71d2a5cb4.png","media/more-7.png":"assets/d318cbbd138f548cfbe9.png","media/more-8.png":"assets/0cdcc2da9c96d28178be.png","media/more-9.png":"assets/8b1acb311ddd79a548da.png","media/policy-discussion.jpg":"assets/23f5d4e1361902cd64f1.webp","media/policy-research-more.png":"assets/473c1cfb14afb90c06da.webp","media/policy-research.png":"assets/3affc7c51337b0ea097d.webp","media/policy-workshop.jpg":"assets/9151be5c5494782d2f85.webp","media/policy.jpg":"assets/0a8997fab8d8754d71a2.webp","media/profile.png":"assets/a8e5d028a05e38e8194b.png","media/ramen-play.png":"assets/3bc3aad94ba1f5e5b346.webp","media/ramen-press.jpg":"assets/3d355b9d3221357e9a30.jpg","media/ramen-ui.png":"assets/d5713a987164c0cd7702.webp","media/ramen-visit-lab.jpg":"assets/5dd1a7e07e634cde170b.webp","media/ramen-visit.png":"assets/7fa205b398d3d89a745e.webp","media/ramen.jpg":"assets/28a0303644ef823aef53.jpg","media/roblox-boss.jpg":"assets/de535a5405f3c5bff40c.jpg","media/roblox-escape.jpg":"assets/dc0f01495ead4cbf59c0.jpg","media/roblox-loot.jpg":"assets/355697af844e36796ae3.jpg","media/roblox-report.jpg":"assets/2cf174cc0d6ee9787693.jpg","media/roblox.jpg":"assets/2496098b28bf1fa6e6c3.jpg","media/shinkai.png":"assets/ff20f4c69b5aa06843b7.png","media/simulation-balance.jpg":"assets/63b2e4fd8fc7da074673.jpg","media/simulation-logic.jpg":"assets/3c9e1ca12370479c001a.jpg","media/simulation-problem.jpg":"assets/c1457d7e9b70a46ee17e.jpg","media/simulation-vision.jpg":"assets/68400799052a3ef595b9.jpg","media/simulation.jpg":"assets/f93738c58c408e3f8838.jpg","media/srpg-grid.jpg":"assets/b8a3d7b2115df4885b46.jpg","media/srpg-menu.jpg":"assets/1148d8ab277c2fc0f5d4.jpg","media/srpg-range.jpg":"assets/472c26d00341bdf70be2.jpg","media/srpg.jpg":"assets/a644882f540b01fb04af.jpg","media/tool-aftereffects.svg":"assets/09562fca2b8088a28105.svg","media/tool-blender.svg":"assets/5bc649b99a194452082c.svg","media/tool-claude.svg":"assets/2f5845f7f2245b513583.svg","media/tool-figma.svg":"assets/d37c2bf1a1d4f10aeffb.svg","media/tool-filmcraft.png":"assets/7ca8adb57a34d1f4bff8.png","media/tool-openai.svg":"assets/2b4a04ddc2395b20d168.svg","media/tool-premiere.svg":"assets/e2417b58620eaf613e50.svg","media/tool-subtitleedit.png":"assets/dac76c5c0efaf1710a97.png","media/tool-swift.svg":"assets/46b6e4abd3ab12c589b8.svg","media/tool-unity.svg":"assets/92f5736155fc1d6a4829.svg","media/tool-vrew.png":"assets/d8684d348d0c96eb8ea9.png","media/tosian-result.png":"assets/e25bdb1e10b24f49c9a1.webp","media/tosian-scene.png":"assets/8ff6c6c0101da63a5767.webp","media/tosian-ui.png":"assets/802d15350dad4d3f3315.webp","media/tosian.jpg":"assets/779b8a649aa4c7ef6677.jpg","media/turtle-counsel.png":"assets/221371a3dfc42aff3671.webp","media/turtle-diary.png":"assets/c82caedae46683dcb680.webp","media/turtle-home.png":"assets/06c52dd33d89d40cbfab.webp","media/turtle-stage-four.png":"assets/36359ef84abee5cb57c3.webp","media/turtle-stage-one.png":"assets/e73ddb36c716e7f4d482.webp","media/turtle-stage-three.png":"assets/2e21ef9c0d5ded0fa7f8.webp","media/turtle-stage-two.png":"assets/7abde74f25e9622dd5c9.webp","media/turtle.jpg":"assets/a56ee36c238124d69acf.jpg","media/venta-dfd.jpg":"assets/5d943cc1209e06449a2d.jpg","media/venta-problem.jpg":"assets/9880d3b90b2d4b421407.jpg","media/venta-result.jpg":"assets/fb14429d82fa31c6bd5c.jpg","media/venta-scenario.jpg":"assets/b2626019160299938a4a.jpg","media/venta-test.jpg":"assets/fa46fd04ba86b2835e53.jpg","media/venta.jpg":"assets/b056c4c3fec0325e96a5.jpg"};window.SCENE={"figma":"https://www.figma.com/design/DdpWS1rdEm68pVvrktkEOg?node-id=228-3302","units":"px","introCanvas":[1920,1080],"canvasBackground":"#f0f0f0","sceneLayers":[{"asset":"intro/left-hand-back.svg","bounds":[85,245,1254,835]},{"asset":"intro/right-hand-back.svg","bounds":[584,245,1254,835]},{"asset":"intro/device.svg","bounds":[348.401,297.443,1224,505]},{"role":"interactive-home-viewport","bounds":[640.993,368.936,635.461,357.447],"reference":"references/embedded-home.png"},{"asset":"intro/left-thumb-front.svg","bounds":[85,245,1254,835]},{"asset":"intro/right-thumb-front.svg","bounds":[584,245,1254,835]}],"home":{"reference":"references/home.png","canvas":[1920,1080],"tileRowBounds":[90,310,1740,332],"tiles":[["ABOUT ME","\uc790\uae30\uc18c\uac1c","home/profile.png"],["ACTIVITIES","\ub300\uc678\ud65c\ub3d9","home/activities.svg"],["PLAY LOG","\uac8c\uc784 \ud50c\ub808\uc774","home/play-log.svg"],["FANDOM","\uc11c\ube0c\uceec\ucc98","home/fandom.svg"],["DESIGN","\ubbf8\uad6c\ud604","home/design.svg"]],"shortcuts":["CONTACT","HIGHLIGHTS","DESIGN","GALLERY","TOOLSET","WHY ME","OUTRO"],"statusAndFooterAreVisualReferences":true}};</script>
 <script>
 "use strict";
 const $=(q,r=document)=>r.querySelector(q), $$=(q,r=document)=>Array.from(r.querySelectorAll(q));
@@ -465,10 +554,10 @@ const tiles=[
   {k:"activities",label:"PROJECTS",desc:"작업 라이브러리",img:"home/shortcut-highlights.svg",c:"#ffbc3f"},
   {k:"play",label:"PLAY LOG",desc:"게임 플레이",img:"home/shortcut-toolset.svg",c:"#174cea",ink:"#fff"},
   {k:"fandom",label:"FANDOM",desc:"서브컬처",img:"home/fandom.svg",c:"#31cd77",glyph:true},
-  {k:"design",label:"DESIGN",desc:"미구현",img:"home/shortcut-design.svg",c:"#ff2529",ink:"#fff",disabled:true}
+  {k:"design",label:"DESIGN",desc:"분석서 · 기획서",img:"home/shortcut-design.svg",c:"#ff2529",ink:"#fff"}
 ];
 const shortcuts=[
-  ["contact","CONTACT","contact"],["activities","HIGHLIGHTS","highlights"],["design","DESIGN","design"],["gallery","GALLERY","gallery"],["work","TOOLSET","toolset"],["work","WHY ME","why-me"],["leave","OUTRO","outro"]
+  ["contact","연락처","contact"],["project2","익스트랙션","gallery"],["tools","사용 도구","why-me"],["leave","종료","outro"]
 ];
 let selected=0, state="intro", current="home", lastFocus=null, muted=false, ctx=null, inMotion=false, cameraAnim=null;
 const lib="https://lunar3840.github.io/extraction-design-library/?theme=black";
@@ -488,7 +577,7 @@ const content={
   gallery:{title:"GALLERY",charge:33,heading:"작업물 둘러보기",lead:"프로젝트와 게임 경험, 팬덤 활동을 모았습니다.",body:()=>'<div class="content-grid">'+card("프로젝트","VR 행사와 익스트랙션 게임 기획.",jump("activities","프로젝트 보기"))+card("게임과 팬덤","플레이 기록과 다양한 콘텐츠 경험.",jump("fandom","팬덤 보기"))+'</div>'+figure('others','그 외 활동 모음 보기')},
   contact:{title:"CONTACT",charge:89,heading:"이호진에게 연락하기",lead:"게임 기획, 시스템·콘텐츠, UX/UI 관련 연락을 환영합니다.",body:()=>'<div class="content-grid">'+card("이메일","ehojin0415@gmail.com",'<a class="pill" href="mailto:ehojin0415@gmail.com">이메일 쓰기</a>')+card("작업물","대표 프로젝트와 기획 라이브러리를 확인해 주세요.",jump("activities","작업물 보기"))+'</div>'}
 };
-function makeTile(t,i){const b=document.createElement("button");b.className="tile";b.dataset.action=t.k;b.dataset.tile=i;b.style.setProperty("--tile",t.c);if(t.ink)b.style.setProperty("--tile-ink",t.ink);b.disabled=!!t.disabled;b.innerHTML='<span class="tile-icon'+(t.glyph?' glyph':'')+'"><img alt=""></span><strong></strong><small></small>';b.querySelector("img").src=pack[t.img];b.querySelector("strong").textContent=t.label;b.querySelector("small").textContent=t.desc;b.addEventListener("pointerenter",e=>{if(state==="home"&&e.pointerType!=="touch"&&!t.disabled)choose(i)});b.addEventListener("focus",()=>{if(state==="home")choose(i,false)});return b;}
+function makeTile(t,i){const b=document.createElement("button");b.className="tile";b.dataset.action=t.k;b.dataset.tile=i;b.style.setProperty("--tile",t.c);if(t.ink)b.style.setProperty("--tile-ink",t.ink);b.disabled=!!t.disabled;b.innerHTML='<span class="tile-icon'+(t.glyph?' glyph':'')+'"><img alt=""></span><strong></strong><small></small><em class="tile-read" aria-hidden="true" hidden></em>';b.querySelector("img").src=pack[t.img];b.querySelector("strong").textContent=t.label;b.querySelector("small").textContent=t.desc;b.addEventListener("pointerenter",e=>{if(state==="home"&&e.pointerType!=="touch"&&!t.disabled)choose(i)});b.addEventListener("focus",()=>{if(state==="home")choose(i,false)});return b;}
 const btns=tiles.map(makeTile);$(".tiles",home).append(...btns);
 for(const [route,label,icon] of shortcuts){const b=document.createElement("button");b.className="shortcut";b.dataset.action=route;b.disabled=route==="design";const im=document.createElement("img");im.alt="";im.src=pack["home/shortcut-"+icon+".svg"];b.append(im,document.createTextNode(label));$(".shortcuts",home).append(b);}
 function choose(i,sound=true){if(!btns[i]||btns[i].disabled)return;if(selected!==i&&sound)tone("move");selected=i;btns.forEach((b,j)=>b.setAttribute("aria-current",j===selected?"true":"false"));}
@@ -538,6 +627,46 @@ function watchActionBar(host){
   actionBarObserver.observe(bar);
 }
 let displayedCharge=100, chargeAnimation=null;
+// Battery shows how much is left unread: it only drains the first time a page is opened.
+const READ_STORE="pr-read-v1";
+let readSet=new Set();
+try{readSet=new Set(JSON.parse(localStorage.getItem(READ_STORE)||"[]"));}catch{}
+if(new URLSearchParams(location.search).has("reset")){readSet=new Set();try{localStorage.removeItem(READ_STORE);history.replaceState(null,"",location.pathname+location.hash);}catch{}}
+const readPages=()=>["about","activities",...projects.map(p=>p.id),"others","play","more","fandom","design","contact"];
+function chargeNow(){
+  const pages=readPages(),done=pages.filter(k=>readSet.has(k)).length;
+  return done>=pages.length?0:Math.max(1,Math.round(100*(1-done/pages.length)));
+}
+function refreshReadMarks(){
+  const byTile={about:["about"],activities:["activities",...projects.map(p=>p.id),"others"],play:["play","more"],fandom:["fandom"],design:["design"]};
+  btns.forEach((b,i)=>{
+    const pages=byTile[tiles[i].k]||[],done=pages.filter(k=>readSet.has(k)).length,mark=$(".tile-read",b);
+    mark.textContent=done>=pages.length?"✓ 다 읽음":done+"/"+pages.length;
+    mark.hidden=!done;
+  });
+  const all=readPages(),count=all.filter(k=>readSet.has(k)).length;
+  const label=$(".read-count",home);
+  if(label)label.textContent=all.length+"쪽 중 "+count+"쪽 읽음";
+}
+function markRead(key){
+  const pages=readPages();
+  if(!pages.includes(key)||readSet.has(key))return false;
+  readSet.add(key);
+  try{localStorage.setItem(READ_STORE,JSON.stringify([...readSet]));}catch{}
+  refreshReadMarks();
+  return pages.every(k=>readSet.has(k));
+}
+function toast(text){
+  let t=$("#toast");
+  if(!t){t=document.createElement("div");t.id="toast";t.setAttribute("role","status");document.body.append(t);}
+  t.textContent=text;t.classList.add("show");
+  clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove("show"),4200);
+}
+function accentOf(key){
+  const tileKey=key==="activities"||key==="others"||projects.some(p=>p.id===key)?"activities":key==="play"||key==="more"?"play":key==="fandom"?"fandom":key==="design"?"design":"about";
+  const t=tiles.find(t=>t.k===tileKey);
+  return {name:tileKey==="activities"?"projects":tileKey,color:t.c,img:key==="contact"?"home/shortcut-contact.svg":t.img};
+}
 const navigationStack=[];
 function animateBattery(host,target){
   cancelAnimationFrame(chargeAnimation);
@@ -563,7 +692,7 @@ function showHome(focus=true){
   state="home";current="home";intro.hidden=true;intro.classList.remove("intro-busy");
   app.hidden=false;detailHost.hidden=true;homeHost.hidden=false;homeHost.append(home);home.inert=false;
   watchActionBar(homeHost);
-  animateBattery(homeHost,100);
+  animateBattery(homeHost,chargeNow());
   window.scrollTo(0,0);
   if(focus)btns[selected].focus({preventScroll:true});
 }
@@ -604,6 +733,7 @@ async function enter(skip=false){
 async function leave(){
   if(inMotion||state==="intro")return;
   audioInit();tone("leave");state="intro";current="home";busy(true);
+  try{history.replaceState({key:"home",depth:0},"",routeOf("home"));}catch{}
   revealObserver?.disconnect();
   disposeCaseReel?.();
   disposeFeaturedRotation?.();
@@ -622,6 +752,7 @@ const tocGroups=[
   {items:[["activities","작업 라이브러리",false],["project1","라면축제 VR",true],["project2","AI 개인 게임 개발",true],["others","기타 프로젝트",true],["roblox","로블록스 EXIT-4",2],["dss","DSS VR 시뮬레이터",2],["editing","김호댕 채널 편집",2],["filmcraft","FilmCraft 편집 도구",2]]},
   {items:[["play","플레이 기록",false],["more","더 많은 게임",true]]},
   {items:[["fandom","서브컬처",false]]},
+  {items:[["design","분석서·기획서",false]]},
   {items:[["contact","연락처",false]]}
 ];
 content.work.charge=67;
@@ -639,7 +770,7 @@ Object.assign(content,{
 });
 function tocHTML(key){
   const active=content[key]?.toc||{gallery:"others"}[key]||key;
-  return '<nav class="toc" aria-label="목차"><div class="toc-inner"><div class="toc-caption">전체 목차</div>'+tocGroups.map(g=>'<div class="toc-group">'+(g.label?'<span class="toc-group-label">'+g.label+'</span>':"")+g.items.map(([id,label,child])=>'<button class="toc-entry'+(child?' child':'')+(child===2?' nested':'')+'" data-action="'+id+'"'+(id===active?' aria-current="page"':'')+'>'+label+'</button>').join("")+'</div>').join("")+'</div></nav>';
+  return '<nav class="toc" aria-label="목차"><div class="toc-inner"><div class="toc-caption">전체 목차</div>'+tocGroups.map(g=>'<div class="toc-group">'+(g.label?'<span class="toc-group-label">'+g.label+'</span>':"")+g.items.filter(([,,child])=>!child||g.items.some(([id])=>id===active)).map(([id,label,child])=>'<button class="toc-entry'+(child?' child':'')+(child===2?' nested':'')+'" data-action="'+id+'"'+(id===active?' aria-current="page"':'')+'>'+label+'</button>').join("")+'</div>').join("")+'</div></nav>';
 }
 function keepTocEntryVisible(rail,entry){
   if(!entry)return;
@@ -713,7 +844,7 @@ function render(key,{record=true,scrollTop=0,section=null}={}){
   // Existing links to the old introduction pages now open their retained content.
   if(content[key]?.profileSection){section=content[key].profileSection;key="about";}
   const c=content[key];if(!c)return;
-  if(record&&current!==key)navigationStack.push({key:current,scrollTop:$(".detail",detailHost)?.scrollTop||0});
+  currentSection=section;
   revealObserver?.disconnect();
   revealObserver=null;
   disposeCaseReel?.();
@@ -724,13 +855,15 @@ function render(key,{record=true,scrollTop=0,section=null}={}){
   const lead=project?"":'<p class="lead">'+c.lead+'</p>';
   const navigation='<nav class="page-navigation" aria-label="페이지 이동"><button class="pill home-control" data-action="home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8M5 9v12h5v-7h4v7h5V9"/></svg> 홈</button><button class="pill" data-action="back"><span class="key">B</span> 뒤로가기</button></nav>';
   const result=project?.result ? '<p class="case-result">'+project.result+'</p>' : "";
-  detailHost.innerHTML='<div class="shell detail-shell"><header class="detail-top">'+navigation+'<h1>'+c.title+'</h1><div class="status">'+c.charge+'% <span class="battery" aria-hidden="true"><i style="--charge:'+c.charge+'%"></i></span></div></header><div class="detail-grid">'+tocHTML(key)+'<article class="detail" tabindex="0" aria-labelledby="detail-heading"><div class="detail-content">'+(c.eyebrow?'<p class="eyebrow">'+c.eyebrow+'</p>':'')+'<h2 id="detail-heading" tabindex="-1">'+c.heading+'</h2>'+result+lead+c.body()+'</div></article></div><footer class="bar">'+navigation+'<div class="actions"><button data-sound aria-pressed="'+!muted+'">'+(muted?'효과음 꺼짐':'효과음 켜짐')+'</button><button data-action="leave">종료</button></div></footer></div>';
+  const accent=accentOf(key),finished=markRead(key),charge=chargeNow();
+  detailHost.innerHTML='<div class="shell detail-shell" data-accent="'+accent.name+'" style="--chip:'+accent.color+'"><header class="detail-top"><span class="section-chip" aria-hidden="true"><img alt="" src="'+pack[accent.img]+'"></span><h1>'+c.title+'</h1><div class="status" title="읽지 않은 페이지만큼 배터리가 남습니다">'+Math.round(displayedCharge)+'% <span class="battery" aria-hidden="true"><i style="--charge:'+displayedCharge+'%"></i></span></div></header><div class="detail-grid">'+tocHTML(key)+'<article class="detail" tabindex="0" aria-labelledby="detail-heading"><div class="detail-content">'+(c.eyebrow?'<p class="eyebrow">'+c.eyebrow+'</p>':'')+'<h2 id="detail-heading" tabindex="-1">'+c.heading+'</h2>'+result+lead+c.body()+'</div></article></div><footer class="bar">'+navigation+'<div class="actions"><button data-sound aria-pressed="'+!muted+'">'+(muted?'효과음 꺼짐':'효과음 켜짐')+'</button><button data-action="leave">종료</button></div></footer></div>';
   initializeLibrary();
   initializeProjectTools();
   if(project)initializeCaseViewer(project);
   else if(key==="about")initializeCaseViewer(lectureGallery);
   watchActionBar(detailHost);
-  animateBattery(detailHost,c.charge);
+  animateBattery(detailHost,charge);
+  if(finished)toast("배터리 0% · 모든 페이지를 읽었습니다");
   window.scrollTo(0,0);
   const detail=$(".detail",detailHost);
   $("h2",detail).focus({preventScroll:true});
@@ -753,8 +886,8 @@ const groups=[["all","전체"],["game","게임·UX/UI"],["service","서비스 �
 const metelResultSource=["https://biz.kumoh.ac.kr/ko/sub01_05_04.do?articleNo=472024&mode=view","금오공대 · METEL 수상 보도자료"];
 const tosianResultSource=["https://metaversedev.kr/board_notice/2024년-메타버스-개발자-경진대회-합격자-명단","대회 운영사무국 · 공식 1차 평가 결과"];
 const projects=[
-  {id:"project2",image:"extraction",featured:true,name:"익스트랙션 (가제)",category:"game",date:"개발 중",role:"개인 개발 · 시스템·UX/UI 기획 / AI 협업 제작",intro:"PC용 싱글플레이 탑뷰 익스트랙션 슈팅 RPG를 개인 개발하고 있습니다. 출격할 동료와 장비를 고르고, 수색한 물자를 들고 살아서 돌아와 다음 출격에 투자하는 흐름을 설계합니다.",
-   imageCaption:"출격 준비 UI",focus:"더 수색할지, 탈출할지 고르는 출격",steps:[
+  {id:"project2",image:"extraction-cover",featured:true,name:"익스트랙션 (가제)",category:"game",date:"개발 중",role:"개인 개발 · 시스템·UX/UI 기획 / AI 협업 제작",intro:"PC용 싱글플레이 탑뷰 익스트랙션 슈팅 RPG를 개인 개발하고 있습니다. 출격할 동료와 장비를 고르고, 수색한 물자를 들고 살아서 돌아와 다음 출격에 투자하는 흐름을 설계합니다.",
+   imageCaption:"콘셉트 아트 · 탈출 지점 (ImageGen·GPT로 제작)",focus:"더 수색할지, 탈출할지 고르는 출격",steps:[
      ["게임 개요","문명이 무너진 폐허에서 몸을 잃은 ‘아니마’를 구조하는 게임입니다. 매 출격에는 그중 한 명과 한 몸을 공유하며, 동료의 관측·기동 능력을 골라 출격합니다. 살아서 가져온 물자는 거점의 연구·정비에 쓰고, 동료 데이터는 여러 출격에 걸쳐 찾습니다.","extraction-concept"],
      ["목표 경험","남은 치료품과 이미 챙긴 전리품을 보고 한 곳 더 수색할지, 탈출할지 고르게 하는 것이 목표입니다. 가방이 차면 무엇을 뺄지, 연구에 쓸 물자를 먼저 챙길지도 선택이 되도록 했습니다.","extraction-goal"],
      ["출격과 귀환의 순환","준비와 진입 → 수색과 철수 → 귀환과 투자로 이어집니다. 탈출한 물자는 보관·판매하거나 공용 연구에 쓰고, 귀환 뒤 부족한 연구 재료가 다음 출격에서 수색할 시설을 정합니다.","extraction-loop"],
@@ -767,7 +900,7 @@ const projects=[
      ["현재 결과와 다음 작업","적 행동을 멈춘 통행 시험에서 B4 진입 → S08 수색 → X3 탈출 → 거점 귀환까지 확인했습니다. 정상 전투를 포함한 연속 출격은 아직 검증 전입니다. 다음은 기존 모션 결함 수정, SCAR의 Unity 연결, 최신 빌드에서 준비부터 귀환 후 사용까지 한 판을 다시 시험하는 것입니다.","extraction-run"],
      ["배운 점","파일 검사를 통과한 결과도 실제 조준·달리기나 시연에서 결함이 드러났습니다. 그래서 AI가 만든 결과물은 실제 플레이 화면에서 확인한 뒤 승인한다는 기준을 세웠습니다."]
    ],
-   media:[["extraction-concept","게임 소개 · 아니마와 한 몸으로 출격"],["extraction-goal","목표 경험 · 더 수색할까, 탈출할까"],["extraction-loop","준비와 진입 → 수색과 철수 → 귀환과 투자"],["extraction-inventory","리그와 배낭을 분리한 인벤토리 · 수납·치료·무기 표기 결정"],["extraction-map","A맵 도면 · 9구획안에서 갈라지고 합류하는 동선으로"],["extraction-ai","AI에 맡기고 직접 판정한 일 · 동료 능력 패널과 S4 의상"],["extraction-play","플레이 화면"],["extraction-tools","기획 라이브러리와 개발 화면"],["extraction-run","B4에서 수색해 X3로 탈출한 통행 시험"]],
+   media:[["extraction-concept","게임 소개 · 아니마와 한 몸으로 출격"],["extraction-goal","목표 경험 · 더 수색할까, 탈출할까"],["extraction-loop","준비와 진입 → 수색과 철수 → 귀환과 투자"],["extraction-inventory","리그와 배낭을 분리한 인벤토리 · 수납·치료·무기 표기 결정"],["extraction","출격 준비 UI · 방어구 장착 전 기본 몸"],["extraction-map","A맵 도면 · 9구획안에서 갈라지고 합류하는 동선으로"],["extraction-ai","AI에 맡기고 직접 판정한 일 · 동료 능력 패널과 S4 의상"],["extraction-play","플레이 화면"],["extraction-tools","기획 라이브러리와 개발 화면"],["extraction-run","B4에서 수색해 X3로 탈출한 통행 시험"]],
    tools:[{id:"library",name:"기획 라이브러리",url:lib,description:"게임 시스템과 콘텐츠 기획, 변경 기록을 정리한 프로젝트 라이브러리입니다."},{id:"editor",name:"데이터 편집기",url:"https://lunar3840.github.io/extraction-data-editor/",description:"게임 수치와 밸런스 데이터를 확인하는 편집기입니다. 열람 전용으로 공개되어 있고, 수정은 프로젝트 PC의 로컬 편집기에서 합니다."}],
    links:[[lib,"기획 라이브러리 열기"],["https://lunar3840.github.io/extraction-data-editor/","데이터 편집기 열기"]],ref:"project2"},
   {id:"project1",image:"ramen",featured:true,name:"구미라면축제 · VR 게임 부스",category:"xr",date:"2024",role:"VR 슈팅 팀장 · 게임 기획 / 현장 운영",intro:"2024 구미라면축제에서 관람객이 VR 헤드셋을 쓰고 기록을 겨루는 슈팅 게임 ‘너구리를 잡아라!’를 기획하고 운영했습니다.",
@@ -1232,7 +1365,7 @@ const projects=[
 }
 ];
 const categoryName=id=>groups.find(([key])=>key===id)?.[1]||"";
-const mediaSrc=id=>pack["media/"+id+".jpg"]||pack["media/"+id+".png"]||pack["media/"+id+".svg"];
+const mediaSrc=id=>pack["media/"+id+".jpg"]||pack["media/"+id+".png"]||pack["media/"+id+".svg"]||pack["media/"+id+".webp"];
 const mediaImage=(id,alt,extra="")=>'<img src="'+mediaSrc(id)+'" alt="'+alt+'" '+extra+'>';
 const lab=(value)=>'<span class="switch-tag">'+value+'</span>';
 const projectTags=p=>lab(categoryName(p.category))+lab(p.date);
@@ -1734,7 +1867,7 @@ function profileHTML(){
     ["팀 프로젝트 · 레벨·UI","로블록스 EXIT-4","5인 팀에서 마지막 스테이지 Stage D의 레벨 디자인과 Basecamp 기반 공통 UI를 맡았습니다.","roblox"]
   ];
   const evidence=[
-    {image:"extraction",title:"규칙은 직접 정하고, 결과는 플레이로 판정하기",context:"대표 경험 · 익스트랙션 (가제) · 개인 개발 중",copy:"회수품을 팔지 연구에 쓸지, 교전 중 치료를 어떤 입력으로 할지, 어디로 진입할지 같은 규칙을 직접 정했습니다. Unity 구현과 입력 시험은 ChatGPT·Codex에, UI는 Figma, 자산은 Tripo·Blender로 만들고, 결과는 실제 플레이 화면에서 확인해 승인하거나 반려했습니다.",lesson:"판정 기준: 파일 검사를 통과해도 조준·달리기에서 결함이 보이면 반려합니다. 세린 S4 의상과 SCAR 장전 승인을 이 기준으로 되돌렸습니다.",to:"project2"},
+    {image:"extraction-cover",title:"규칙은 직접 정하고, 결과는 플레이로 판정하기",context:"대표 경험 · 익스트랙션 (가제) · 개인 개발 중",copy:"회수품을 팔지 연구에 쓸지, 교전 중 치료를 어떤 입력으로 할지, 어디로 진입할지 같은 규칙을 직접 정했습니다. Unity 구현과 입력 시험은 ChatGPT·Codex에, UI는 Figma, 자산은 Tripo·Blender로 만들고, 결과는 실제 플레이 화면에서 확인해 승인하거나 반려했습니다.",lesson:"판정 기준: 파일 검사를 통과해도 조준·달리기에서 결함이 보이면 반려합니다. 세린 S4 의상과 SCAR 장전 승인을 이 기준으로 되돌렸습니다.",to:"project2"},
     {image:"roblox",title:"탐색과 서사가 같은 행동이 되게 하기",context:"팀 프로젝트 · 로블록스 EXIT-4 · Stage D 레벨 디자인·공통 UI",copy:"Stage D에서 엘리베이터 번호 4498을 두 사람의 기록에 나눠 두고, 고난도 구역 쪽에서만 열리는 단축문으로 첫 플레이의 오인 진입과 반복 플레이의 이동 부담을 함께 줄였습니다. 보스전은 고전압 장치를 써야 탄약 효율이 생기도록 피해 감소를 조정했습니다.",lesson:"공통 UI 기준: 위험은 빨강, 진행은 주황, 방어는 파랑. 큰 창은 동시에 열리지 않게 했습니다.",to:"roblox"},
     {image:"turtle-home",title:"인터뷰를 구체적인 행동으로 옮기기",context:"거북이를 날다 · 인터뷰·UX/UI",copy:"사용자를 만난 리서치에서 출발해 작은 일상 활동, 기록, 관계 확장과 상담 연결로 앱의 흐름을 구성했습니다. 막연한 격려를 사용자가 시도할 수 있는 행동으로 구체화한 경험입니다.",lesson:"설계에서 확인할 것: 다음 행동이 충분히 작고 분명한가?",to:"turtle"},
     {image:"filmcraft-timeline",title:"판단은 직접, 반복은 도구로 다루기",context:"김호댕 채널 · 컷 편집·자막·연출",copy:"장면 선택과 순서 구성, 컷 편집은 직접 담당했습니다. 자막 초안과 반복 서식에는 AI를 활용하고, 결과는 재생하며 다시 확인했습니다. 편집 중 발견한 불편은 FilmCraft 개선 요구사항으로 이어졌습니다.",lesson:"작업 기준: 이야기의 흐름과 연출 판단은 직접 책임지기.",to:"editing"}
@@ -1757,7 +1890,7 @@ function profileHTML(){
     '<section id="profile-recognition" class="profile-section" data-outline>'+sectionLabel("수상·평가 기록","RECOGNITION")+'<div class="content-grid">'+
       card("METEL · 팀 수상","2023년 제2회 동북권 메타버스 창작자 경진대회에서 3인 팀으로 청년 개발 부문 강원테크노파크원장상을 받았습니다.",ext(metelResultSource[0],"공식 보도자료"))+
       card("Tosian · 팀 1차 평가 통과","2024 메타버스 개발자 경진대회에서 ‘고양이 시야 연구소’ 팀으로 ㈜듀코젠 취업과제 1차 평가를 통과했습니다.",ext(tosianResultSource[0],"공식 평가 결과"))+'</div></section>'+
-    '<section id="profile-focus" class="profile-section" data-outline>'+sectionLabel("지원 방향과 이어갈 작업","FOCUS")+'<div class="profile-focus-list"><article><span>UX 기획</span><h4>이해하고 선택하는 흐름</h4><p>플레이어의 목표와 제약을 파악하고, 필요한 정보와 조작 흐름을 기획하고 싶습니다. 서비스디자인의 사용자 관점과 라면축제의 현장 경험을 게임 UX에 연결하겠습니다.</p></article><article><span>시스템 기획</span><h4>선택을 뒷받침하는 규칙</h4><p>UX와 맞닿은 게임 규칙·장비·데이터를 함께 다루고 싶습니다. 로블록스 프로젝트의 무기·방어구 밸런스 기준과 익스트랙션의 데이터 편집기처럼, 의도와 수치를 문서와 도구로 구체화하는 작업을 이어갑니다.</p></article><article><span>콘텐츠 기획</span><h4>다시 경험하고 싶은 순간</h4><p>플레이어가 어떤 상황에서 흥미를 느끼고 다음 행동을 선택하는지 살피고 싶습니다. Stage D에서 시설 기록으로 단서와 서사를 함께 전한 경험과, 게임 플레이·영상 편집에서 쌓은 전달 흐름에 대한 관심을 넓혀가겠습니다.</p></article></div><div class="case-links">'+jump("play","게임 플레이 기록")+jump("fandom","서브컬처 관심사")+jump("contact","연락하기")+'</div></section>'+figure("about","기존 PR 문서 · 자기소개 보기")+photoViewerHTML("Blender 강의 자료");
+    '<section id="profile-focus" class="profile-section" data-outline>'+sectionLabel("지원 방향과 이어갈 작업","FOCUS")+'<div class="profile-focus-list"><article><span>UX 기획</span><h4>이해하고 선택하는 흐름</h4><p>플레이어의 목표와 제약을 파악하고, 필요한 정보와 조작 흐름을 기획하고 싶습니다. 서비스디자인의 사용자 관점과 라면축제의 현장 경험을 게임 UX에 연결하겠습니다.</p></article><article><span>시스템 기획</span><h4>선택을 뒷받침하는 규칙</h4><p>UX와 맞닿은 게임 규칙·장비·데이터를 함께 다루고 싶습니다. 로블록스 프로젝트의 무기·방어구 밸런스 기준과 익스트랙션의 데이터 편집기처럼, 의도와 수치를 문서와 도구로 구체화하는 작업을 이어갑니다.</p></article><article><span>콘텐츠 기획</span><h4>다시 경험하고 싶은 순간</h4><p>플레이어가 어떤 상황에서 흥미를 느끼고 다음 행동을 선택하는지 살피고 싶습니다. Stage D에서 시설 기록으로 단서와 서사를 함께 전한 경험과, 게임 플레이·영상 편집에서 쌓은 전달 흐름에 대한 관심을 넓혀가겠습니다.</p></article></div><div class="case-links">'+jump("play","게임 플레이 기록")+jump("fandom","서브컬처 관심사")+jump("contact","연락하기")+'</div></section>'+'<section id="profile-contact" class="profile-section" data-outline>'+sectionLabel("명함과 연락처","CONTACT")+contactBlockHTML()+'</section>'+figure("about","기존 PR 문서 · 자기소개 보기")+photoViewerHTML("Blender 강의 자료");
 }
 const games=[
   ["Counter-Strike 2","PC · 6,000시간 이상","중학생 때부터 플레이해 온 경쟁 FPS."],
@@ -1785,14 +1918,95 @@ for(const id of ["roblox","dss","editing","filmcraft"])content[id].toc=id;
 for(const [key,title] of Object.entries({about:"자기소개",direction:"방향과 강점",work:"작업 방식과 지원 동기",activities:"작업 라이브러리",others:"기타 프로젝트",play:"플레이 기록",more:"더 많은 게임",fandom:"서브컬처",gallery:"작업 모음",contact:"연락처"}))content[key].title=title;
 for(const project of projects)content[project.id].title="프로젝트";
 
-function back(){tone("back");const previous=navigationStack.pop();if(previous&&previous.key!=="home"){render(previous.key,{record:false,scrollTop:previous.scrollTop});return;}showHome(false);if(lastFocus?.isConnected)lastFocus.focus({preventScroll:true});else btns[selected].focus({preventScroll:true});}
-document.addEventListener("click",e=>{const b=e.target.closest("button");if(!b||b.disabled)return;audioInit();if(b.hasAttribute("data-sound")){toggleSound();return;}const a=b.dataset.action;if(!a)return;if(a==="leave"){leave();return;}if(a==="home"){tone("back");showHome();return;}if(a==="back"){back();return;}if(a==="activate"){btns[selected].click();return;}if(content[a]){tone("open");render(a);}});
+// Name card, contact and the document shelf (2026-11-24).
+const mailAddress=(content.contact.body().match(/mailto:([^"]+)/)||[])[1]||"";
+const siteAddress="lunar3840.github.io";
+const editorUrl="https://lunar3840.github.io/extraction-data-editor/";
+function nameCardHTML(){
+  return '<div class="namecard" role="group" aria-label="이호진 명함"><img class="namecard-photo" alt="" src="'+pack["home/profile.png"]+'"><p class="namecard-kicker">SELF PR PORTFOLIO</p><p class="namecard-name">이호진</p><p class="namecard-role">UX/UI · 시스템 및 콘텐츠 기획</p><dl class="namecard-lines"><div><dt>E</dt><dd>'+mailAddress+'</dd></div><div><dt>W</dt><dd>'+siteAddress+'</dd></div></dl><div class="namecard-strip" aria-hidden="true">'+tiles.map(t=>'<i style="background:'+t.c+'"></i>').join("")+'</div></div>';
+}
+function contactBlockHTML(){
+  const row=(label,value,links)=>'<div><dt>'+label+'</dt><dd><span>'+value+'</span><div class="case-links">'+links+'</div></dd></div>';
+  return '<div class="contact-block">'+nameCardHTML()+'<dl class="contact-list">'+
+    row("이메일",mailAddress,'<a class="pill dark" href="mailto:'+mailAddress+'">이메일 쓰기</a><button type="button" class="pill" data-copy="'+mailAddress+'">주소 복사</button>')+
+    row("사이트",siteAddress,ext("https://github.com/lunar3840","GitHub"))+
+    row("익스트랙션","기획 문서와 수치 데이터",ext(lib,"기획 라이브러리")+ext(editorUrl,"데이터 편집기"))+
+    row("작업물","프로젝트와 문서",jump("activities","작업 라이브러리")+jump("design","분석서·기획서"))+
+    '</dl></div>';
+}
+content.contact.body=contactBlockHTML;
+content.tools={profileSection:"profile-tools"};
+const designDocs=[
+  {group:"기획 문서",code:"DESIGN DOCS",items:[
+    {kind:"기획 문서",title:"익스트랙션 기획 라이브러리",desc:"게임 시스템과 콘텐츠 기획, 변경 기록을 정리한 프로젝트 라이브러리입니다.",meta:"웹 문서 · 새 탭에서 열립니다",url:lib,label:"라이브러리 열기"},
+    {kind:"수치 데이터",title:"익스트랙션 데이터 편집기",desc:"게임 수치와 밸런스 데이터를 확인하는 편집기입니다. 열람 전용으로 공개되어 있습니다.",meta:"103개 분류 · 12,931개 값",url:editorUrl,label:"편집기 열기"},
+    {kind:"기획서",title:"익스트랙션 기획서",desc:"문서를 정리해 올릴 예정입니다.",pending:true}
+  ]},
+  {group:"분석 문서",code:"ANALYSIS",items:[
+    {kind:"분석서",title:"게임 UX 분석서",desc:"문서를 정리해 올릴 예정입니다.",pending:true}
+  ]}
+];
+function designHTML(){
+  let index=0;
+  return designDocs.map(section=>'<section class="doc-section" data-outline>'+sectionLabel(section.group,section.code)+'<div class="doc-list">'+section.items.map(doc=>{
+    index++;
+    return '<article class="doc-card'+(doc.pending?' pending':'')+'"><div class="doc-cover" aria-hidden="true"><span>'+doc.kind+'</span><b>'+String(index).padStart(2,"0")+'</b></div><div class="doc-copy">'+lab(doc.pending?"준비 중":doc.kind)+'<h4>'+doc.title+'</h4><p>'+doc.desc+'</p>'+(doc.meta?'<p class="doc-meta">'+doc.meta+'</p>':"")+(doc.url?'<div class="case-links">'+ext(doc.url,doc.label)+jump("project2","관련 작업 보기")+'</div>':"")+'</div></article>';
+  }).join("")+'</div></section>').join("");
+}
+content.design={title:"분석서·기획서",heading:"분석서와 기획서",lead:"직접 쓴 기획 문서와 분석 문서를 모아 두는 곳입니다. 지금은 익스트랙션의 기획 라이브러리와 수치 데이터를 열어 볼 수 있습니다.",eyebrow:"PORTFOLIO / DESIGN",body:designHTML};
+
+// Each page has its own address (#about, #project2, #about/profile-tools) and follows the browser's back button.
+let currentSection=null;
+const routeOf=(key,section)=>key==="home"?location.pathname:"#"+key+(section?"/"+section:"");
+function parseRoute(){
+  let hash="";try{hash=decodeURIComponent(location.hash.slice(1));}catch{}
+  const [key,section]=hash.split("/");
+  if(content[key])return {key,section:section||null};
+  const legacy=new URLSearchParams(location.search).get("project");
+  return content[legacy]?{key:legacy,section:null}:{key:null,section:null};
+}
+function stampScroll(){
+  const detail=$(".detail",detailHost);
+  if(state!=="detail"||!detail)return;
+  try{history.replaceState({...(history.state||{}),scrollTop:detail.scrollTop},"");}catch{}
+}
+function pushRoute(key,section){
+  try{history.pushState({key,section:section||null,depth:(history.state?.depth||0)+1},"",routeOf(key,section));}catch{}
+}
+function navigate(key){stampScroll();render(key);pushRoute(current,currentSection);}
+function goHome(){stampScroll();showHome();pushRoute("home");}
+function focusHome(){if(lastFocus?.isConnected)lastFocus.focus({preventScroll:true});else btns[selected].focus({preventScroll:true});}
+function back(){
+  tone("back");
+  if((history.state?.depth||0)>0){history.back();return;}
+  showHome(false);
+  try{history.replaceState({key:"home",depth:0},"",routeOf("home"));}catch{}
+  focusHome();
+}
+addEventListener("popstate",event=>{
+  if(inMotion)return;
+  const saved=event.state,route=parseRoute();
+  const key=saved?.key||route.key;
+  if(key&&key!=="home"&&content[key]){
+    if(state==="intro")showHome(false);
+    render(key,{record:false,scrollTop:saved?.scrollTop||0,section:saved?(saved.scrollTop?null:saved.section):route.section});
+    // A typed or pasted address has no saved state yet: give it its canonical form.
+    if(!saved)try{history.replaceState({key:current,section:currentSection,depth:0},"",routeOf(current,currentSection));}catch{}
+  }else if(state!=="intro"){
+    showHome(false);focusHome();
+  }
+});
+document.addEventListener("click",e=>{const b=e.target.closest("button");if(!b||b.disabled)return;audioInit();if(b.hasAttribute("data-sound")){toggleSound();return;}if(b.dataset.copy){(navigator.clipboard?navigator.clipboard.writeText(b.dataset.copy):Promise.reject()).then(()=>toast("이메일 주소를 복사했습니다")).catch(()=>toast("복사하지 못했습니다. 주소를 직접 선택해 주세요"));return;}const a=b.dataset.action;if(!a)return;if(a==="leave"){leave();return;}if(a==="home"){tone("back");goHome();return;}if(a==="back"){back();return;}if(a==="activate"){btns[selected].click();return;}if(content[a]){tone("open");navigate(a);}});
 $("#start").addEventListener("click",()=>enter());$("#skip").addEventListener("click",()=>enter(true));
 document.addEventListener("keydown",e=>{if(inMotion||e.altKey||e.ctrlKey||e.metaKey)return;if(e.key==="Escape"){e.preventDefault();if(state==="detail")back();else if(state==="home")leave();return;}if(state==="home"&&["ArrowLeft","ArrowRight","ArrowUp","ArrowDown"].includes(e.key)){e.preventDefault();const cols=matchMedia("(max-width:480px)").matches?2:matchMedia("(max-width:850px)").matches?3:5;const n=btns.filter(b=>!b.disabled).length;const delta={ArrowLeft:-1,ArrowRight:1,ArrowUp:-cols,ArrowDown:cols}[e.key];choose((selected+delta+n)%n);btns[selected].focus({preventScroll:true});}});
 addEventListener("resize",()=>{if(state==="intro"&&!inMotion)drawIntro();});
-const initialProject=new URLSearchParams(location.search).get("project");
-if(content[initialProject]){
+displayedCharge=chargeNow();
+{const status=$(".status",home);status.firstChild.textContent=displayedCharge+"% ";$(".battery i",status).style.setProperty("--charge",displayedCharge+"%");}
+refreshReadMarks();
+const initialRoute=parseRoute();
+if(initialRoute.key){
   showHome(false);
-  render(initialProject);
+  render(initialRoute.key,{record:false,section:initialRoute.section});
+  try{history.replaceState({key:current,section:currentSection,depth:0},"",routeOf(current,currentSection));}catch{}
 }
 </script></body></html>
