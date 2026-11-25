@@ -640,10 +640,13 @@ function watchActionBar(host){
 }
 let displayedCharge=100, chargeAnimation=null;
 // Battery shows how much is left unread: it only drains the first time a page is opened.
+// Progress lasts for one visit: a refresh keeps it, but leaving the site and coming back starts at 100%.
 const READ_STORE="pr-read-v1";
 let readSet=new Set();
-try{readSet=new Set(JSON.parse(localStorage.getItem(READ_STORE)||"[]"));}catch{}
-if(new URLSearchParams(location.search).has("reset")){readSet=new Set();try{localStorage.removeItem(READ_STORE);history.replaceState(null,"",location.pathname+location.hash);}catch{}}
+try{localStorage.removeItem(READ_STORE);}catch{}
+const navType=performance.getEntriesByType?.("navigation")[0]?.type;
+try{if(navType==="reload")readSet=new Set(JSON.parse(sessionStorage.getItem(READ_STORE)||"[]"));else sessionStorage.removeItem(READ_STORE);}catch{}
+if(new URLSearchParams(location.search).has("reset")){readSet=new Set();try{sessionStorage.removeItem(READ_STORE);history.replaceState(null,"",location.pathname+location.hash);}catch{}}
 const readPages=()=>["about","activities",...projects.map(p=>p.id),"others","play","more","fandom","design","contact"];
 function chargeNow(){
   const pages=readPages(),done=pages.filter(k=>readSet.has(k)).length;
@@ -664,7 +667,7 @@ function markRead(key){
   const pages=readPages();
   if(!pages.includes(key)||readSet.has(key))return false;
   readSet.add(key);
-  try{localStorage.setItem(READ_STORE,JSON.stringify([...readSet]));}catch{}
+  try{sessionStorage.setItem(READ_STORE,JSON.stringify([...readSet]));}catch{}
   refreshReadMarks();
   return pages.every(k=>readSet.has(k));
 }
@@ -2064,6 +2067,13 @@ addEventListener("resize",()=>{if(state==="intro"&&!inMotion)drawIntro();});
 displayedCharge=chargeNow();
 {const status=$(".status",home);status.firstChild.textContent=displayedCharge+"% ";$(".battery i",status).style.setProperty("--charge",displayedCharge+"%");}
 refreshReadMarks();
+addEventListener("pageshow",e=>{
+  if(!e.persisted)return;
+  readSet=new Set();try{sessionStorage.removeItem(READ_STORE);}catch{}
+  if(state==="detail")markRead(current);
+  refreshReadMarks();
+  animateBattery(state==="detail"?detailHost:homeHost,chargeNow());
+});
 const initialRoute=parseRoute();
 if(initialRoute.key){
   showHome(false);
