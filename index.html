@@ -491,6 +491,15 @@ html{scroll-padding-bottom:calc(var(--action-bar-height, 52px) + 16px)}
 .reel-controls>*{min-width:0}
 @media(max-width:480px){.reel-stage{min-height:0}}
 @media(max-width:650px){.reel-thumbs{grid-auto-columns:58px;overflow-x:auto;overscroll-behavior-inline:contain;scrollbar-width:thin}}
+.profile-draft{position:relative;overflow:hidden;isolation:isolate}
+.profile-draft>:not(.motivation-visual){position:relative;z-index:1}
+.motivation-visual{position:absolute;inset:0 0 0 auto;width:48%;z-index:0;pointer-events:none;overflow:hidden}
+.motivation-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.04);transition:opacity 1.6s ease,transform 6s ease}
+.motivation-visual img.on{opacity:.62;transform:scale(1.1)}
+.motivation-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#252b31 0%,#252b31 8%,rgba(37,43,49,.9) 30%,rgba(37,43,49,.4) 65%,rgba(37,43,49,.12) 100%),linear-gradient(0deg,rgba(37,43,49,.7),transparent 40%)}
+.motivation-caption{position:absolute;right:16px;bottom:12px;z-index:1;font-size:12.5px;font-weight:650;color:#cfe9ec;letter-spacing:.01em;text-shadow:0 1px 3px #000a}
+@media(max-width:850px){.motivation-visual{width:100%}.motivation-visual img.on{opacity:.22}.motivation-visual::after{background:linear-gradient(90deg,rgba(37,43,49,.85),rgba(37,43,49,.55))}.motivation-caption{display:none}}
+@media(prefers-reduced-motion:reduce){.motivation-visual img{transition:none;transform:none}}
 /* documents (DESIGN) */
 .doc-list{display:grid;gap:14px}
 .doc-card{display:grid;grid-template-columns:clamp(92px,11vw,140px) minmax(0,1fr);gap:clamp(16px,2.4vw,30px);background:#fff;border:1px solid #d7dadc;padding:clamp(14px,1.8vw,22px)}
@@ -657,6 +666,22 @@ function markRead(key){
   return pages.every(k=>readSet.has(k));
 }
 // Short paragraphs (two or three sentences) read better with one sentence per line.
+// Motivation card: project photos slowly cross-fade behind a gradient on the right.
+const motivationPhotos=[["media/ramen.jpg","구미라면축제 VR 부스"],["media/ramen-play.png","너구리를 잡아라! 플레이 화면"],["media/ramen-visit.png","관람객 플레이"],["media/profile.png","축제 현장의 이호진"],["media/extraction-cover.webp","익스트랙션 콘셉트 아트 (ImageGen·GPT)"],["media/extraction-play.jpg","익스트랙션 플레이 화면"]];
+function motivationVisualHTML(){
+  return '<div class="motivation-visual" aria-hidden="true">'+motivationPhotos.map(([key],i)=>'<img alt="" src="'+pack[key]+'"'+(i?' loading="lazy"':' class="on"')+'>').join("")+'<span class="motivation-caption">'+motivationPhotos[0][1]+'</span></div>';
+}
+let motivationTimer=null;
+function startMotivationVisual(root){
+  clearInterval(motivationTimer);
+  const box=root.querySelector(".motivation-visual"); if(!box)return;
+  const imgs=[...box.querySelectorAll("img")], cap=box.querySelector(".motivation-caption"); let i=0;
+  if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+  motivationTimer=setInterval(()=>{
+    if(!box.isConnected){clearInterval(motivationTimer);return;}
+    imgs[i].classList.remove("on"); i=(i+1)%imgs.length; imgs[i].classList.add("on"); cap.textContent=motivationPhotos[i][1];
+  },4200);
+}
 function breakTwoSentences(root){
   const boundary=/([다요]\.)\s+(?=\S)/g;
   root.querySelectorAll(".detail p, .detail .lead").forEach(p=>{
@@ -887,6 +912,7 @@ function render(key,{record=true,scrollTop=0,section=null}={}){
   else if(key==="about")initializeCaseViewer(lectureGallery);
   watchActionBar(detailHost);
   breakTwoSentences(detailHost);
+  startMotivationVisual(detailHost);
   animateBattery(detailHost,charge);
   if(finished)toast("배터리 0% · 모든 페이지를 읽었습니다");
   window.scrollTo(0,0);
@@ -1907,9 +1933,9 @@ function profileHTML(){
     ["사용·재생하며 확인","플레이와 현장 반응, 영상의 실제 재생으로 의도와 결과를 비교합니다. AI가 만든 결과도 실제 조작 화면에서 확인한 뒤 승인하거나 반려합니다.","플레이 점검 · 재생 검수 · 승인·반려"],
     ["수정하고 기록","검토 결과를 다음 수정으로 연결합니다. 기획 라이브러리와 데이터 편집기, 인계 문서와 템플릿으로 변경과 반복 작업을 관리합니다.","변경 기록 · 데이터 · 인계 문서"]
   ];
-  return '<div class="profile-panel profile-intro">'+mediaImage("profile","카메라를 든 이호진")+'<div><p class="profile-kicker">금오공과대학교 산업공학과 · 서비스디자인</p><h3>이호진</h3><p class="profile-role-interest">게임 UX·시스템·콘텐츠 기획을 희망합니다.</p><p>플레이어가 상황을 이해하고 다음 행동을 고르는 흐름을 설계하고 싶습니다. 라면축제 VR 부스에서 관람객의 플레이를 현장에서 지켜봤고, 로블록스 팀 프로젝트에서는 마지막 스테이지의 레벨과 공통 UI를 맡았습니다. 지금은 개인 게임 ‘익스트랙션’의 규칙·화면·수치를 직접 정하고, AI로 구현한 결과를 플레이하며 승인하거나 반려합니다.</p><dl class="profile-facts">'+facts.map(([key,value])=>'<div><dt>'+key+'</dt><dd>'+value+'</dd></div>').join("")+'</dl><div class="case-links">'+jump("project2","익스트랙션 개발 보기")+jump("project1","라면축제 VR 보기")+jump("contact","연락하기")+'</div></div></div>'+
+  return '<div class="profile-panel profile-intro">'+mediaImage("profile","카메라를 든 이호진")+'<div><p class="profile-kicker">금오공과대학교 산업공학과 · 서비스디자인</p><h3>이호진</h3><p class="profile-role-interest">게임 UX·시스템·콘텐츠 기획을 희망합니다.</p><p>플레이어가 상황을 이해하고 다음 행동을 고르는 흐름을 설계하고 싶습니다.<br>라면축제 VR 부스에서 관람객의 플레이를 현장에서 지켜봤고,<br>로블록스 팀 프로젝트에서는 마지막 스테이지의 레벨과 공통 UI를 맡았습니다.<br>지금은 개인 게임 ‘익스트랙션’의 규칙·화면·수치를 직접 정하고, AI로 구현한 결과를 플레이하며 승인하거나 반려합니다.</p><dl class="profile-facts">'+facts.map(([key,value])=>'<div><dt>'+key+'</dt><dd>'+value+'</dd></div>').join("")+'</dl><div class="case-links">'+jump("project2","익스트랙션 개발 보기")+jump("project1","라면축제 VR 보기")+jump("contact","연락하기")+'</div></div></div>'+
     '<div class="profile-summary" aria-label="대표 경험 요약">'+highlights.map(([tag,title,copy,to])=>'<article><span>'+tag+'</span><h4>'+title+'</h4><p>'+copy+'</p>'+jump(to,"관련 작업")+'</article>').join("")+'</div>'+
-    '<section id="profile-motivation" class="profile-section" data-outline>'+sectionLabel("게임 기획을 선택한 계기","MOTIVATION")+'<article class="profile-draft"><span class="profile-draft-label">구미라면축제에서 시작된 관심</span><h4>플레이가 시작되고 끝나는 순간까지 설계하고 싶습니다.</h4><p>구미라면축제에서 VR 슈팅 게임을 만들고 부스를 운영하며, 제가 기획한 게임을 관람객이 직접 플레이하는 과정을 경험했습니다. 게임이 끝난 뒤 점수가 운영용 모니터에만 표시되는 상황에서는, 참가자가 헤드셋을 벗기 전에 기록을 맞혀 보도록 진행 방식을 바꿨습니다.</p><p>이 경험은 게임의 규칙과 화면, 안내와 결과 확인까지 하나의 흐름으로 바라보는 계기가 됐습니다. 플레이어가 지금 무엇을 이해하고 어떤 행동을 선택하는지 고민하는 일에 흥미를 느꼈고, 사용자 경험을 중심으로 게임을 기획하고 싶다는 방향을 잡았습니다.</p><p>현재 제작 중인 익스트랙션에서는 이 관심을 ‘더 수색할지, 탈출할지’를 고르는 출격 흐름과 수납·치료 UX로 이어가고 있습니다. 규칙을 직접 정하고 실제로 플레이하며, 선택과 결과가 이해하기 쉬운 경험으로 연결되는지 확인합니다.</p><div class="case-links">'+jump("project1","계기가 된 라면축제")+jump("project2","현재의 익스트랙션 작업")+'</div></article></section>'+
+    '<section id="profile-motivation" class="profile-section" data-outline>'+sectionLabel("게임 기획을 선택한 계기","MOTIVATION")+'<article class="profile-draft">'+motivationVisualHTML()+'<span class="profile-draft-label">구미라면축제에서 시작된 관심</span><h4>플레이가 시작되고 끝나는 순간까지 설계하고 싶습니다.</h4><p>구미라면축제에서 VR 슈팅 게임을 만들고 부스를 운영하며, 제가 기획한 게임을 관람객이 직접 플레이하는 과정을 경험했습니다. 게임이 끝난 뒤 점수가 운영용 모니터에만 표시되는 상황에서는, 참가자가 헤드셋을 벗기 전에 기록을 맞혀 보도록 진행 방식을 바꿨습니다.</p><p>이 경험은 게임의 규칙과 화면, 안내와 결과 확인까지 하나의 흐름으로 바라보는 계기가 됐습니다. 플레이어가 지금 무엇을 이해하고 어떤 행동을 선택하는지 고민하는 일에 흥미를 느꼈고, 사용자 경험을 중심으로 게임을 기획하고 싶다는 방향을 잡았습니다.</p><p>현재 제작 중인 익스트랙션에서는 이 관심을 ‘더 수색할지, 탈출할지’를 고르는 출격 흐름과 수납·치료 UX로 이어가고 있습니다. 규칙을 직접 정하고 실제로 플레이하며, 선택과 결과가 이해하기 쉬운 경험으로 연결되는지 확인합니다.</p><div class="case-links">'+jump("project1","계기가 된 라면축제")+jump("project2","현재의 익스트랙션 작업")+'</div></article></section>'+
     '<section id="profile-history" class="profile-section" data-outline>'+sectionLabel("경험이 이어진 과정","EXPERIENCE")+'<p class="profile-section-note">사용자를 이해하는 공부에서 출발해, 직접 만들고 현장에서 확인하고 콘텐츠로 전달하는 경험을 쌓았습니다.</p><div class="profile-history">'+activityRows.map(([date,title,description,to,label])=>'<article><p class="history-date">'+date+'</p><div><h4>'+title+'</h4><p>'+description+'</p>'+(to?jump(to,label||"관련 작업 자세히 보기"):"")+'</div></article>').join("")+'</div></section>'+
     profileTeachingHTML()+
     '<section id="profile-strengths" class="profile-section" data-outline>'+sectionLabel("방향과 강점","CAPABILITIES")+'<p class="profile-section-note">규칙을 정하고 직접 확인하는 일, 정보를 전달하는 흐름을 설계하는 일, 사용자를 만나 문제를 정의하는 일을 강점으로 연결하고 있습니다. 아래는 각 강점이 드러난 작업입니다.</p><div class="profile-evidence-list">'+evidence.map((item,index)=>'<article class="profile-evidence'+(index<2?' profile-evidence-featured':'')+'"><button class="profile-evidence-image" data-action="'+item.to+'" aria-label="'+item.context+' 프로젝트 보기">'+mediaImage(item.image,item.context,'loading="lazy"')+'</button><div><p class="profile-evidence-context">'+item.context+'</p><h4>'+item.title+'</h4><p>'+item.copy+'</p><p class="profile-lesson">'+item.lesson+'</p>'+jump(item.to,"사례 자세히 보기")+'</div></article>').join("")+'</div>'+figure("direction","기존 PR 문서 · 방향과 강점 보기")+'</section>'+
