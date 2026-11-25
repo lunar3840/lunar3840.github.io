@@ -798,7 +798,7 @@ async function leave(){
 
 // Keep the PR document's groups, with direct access to the editing work.
 // Every non-featured project in the library gets a TOC entry (short labels below).
-const tocShort={roblox:"로블록스 EXIT-4",srpg:"SRPG 프로토타입",dss:"DSS VR 시뮬레이터",venta:"VENTA X 평가",editing:"김호댕 채널 편집",dolby:"Dolby PR 공모전",filmcraft:"FilmCraft 편집 도구",simulation:"Arena 시뮬레이션",turtle:"거북이를 날다",policy:"시민정책디자인단",forum:"구미 2030 여성포럼"};
+const tocShort={roblox:"로블록스 EXIT-4",srpg:"SRPG 프로토타입",dss:"DSS VR 시뮬레이터",venta:"VENTA X 평가",editing:"김호댕 편집 · FilmCraft",dolby:"Dolby PR 공모전",filmcraft:"FilmCraft 편집 도구",simulation:"Arena 시뮬레이션",turtle:"거북이를 날다",policy:"시민정책디자인단",forum:"구미 2030 여성포럼"};
 const tocGroups=[
   {items:[["about","자기소개",false]]},
   {items:[["activities","작업 라이브러리",false],["project1","라면축제 VR",true],["project2","AI 개인 게임 개발",true],["others","기타 프로젝트",true],["*other-projects"]]},
@@ -1029,10 +1029,10 @@ const projects=[
   {
   "id": "editing",
   "image": "editing-thumbnail",
-  "name": "김호댕 채널 · 게임 영상 편집",
+  "name": "김호댕 채널 편집 · FilmCraft 개선",
   "category": "video",
   "date": "2026.05 공개작부터",
-  "role": "직접 컷 편집 / 자막·연출",
+  "role": "직접 컷 편집 / 자막·연출 / 편집 도구 개선",
   "intro": "김호댕 채널에서 2026년 5월 공개작부터 대부분의 롱폼 영상 편집을 담당했습니다. 장면 선택과 컷 편집은 직접 진행하고, AI는 자막 초안·서식 적용·반복 배치와 편집 도구 개선에 활용했습니다.",
   "imageCaption": "대표 편집 영상 ‘이스터에그 대형사고’ · 김호댕 채널",
   "focus": "플레이 맥락과 시청 흐름",
@@ -1143,9 +1143,44 @@ const projects=[
       "filmcraft-timeline"
     ],
     [
-      "편집 환경의 개선으로 연결",
-      "Premiere Pro에서 쓰던 스타일을 FilmCraft로 이어 쓰기 위해 한글 입력, 템플릿과 글꼴 연결, 자막 편집 기능을 개선했습니다. 구체적인 도구 개선 과정은 FilmCraft 프로젝트에 정리했습니다.",
+      "FilmCraft · 실제 작업에서 찾은 문제",
+      "Premiere Pro에서 사용하던 자막 스타일과 편집 흐름을 FilmCraft로 옮기면서, 작업 화면의 한글 입력과 템플릿 적용, 자막 편집 동작에서 불편을 발견했습니다.",
+      "filmcraft-timeline"
+    ],
+    [
+      "FilmCraft · 요구사항 정의와 AI 보조 구현",
+      "솔로·파티별 화자 구분, 의미 단위의 문장 분리, 기존 글꼴·그림자·이름표 보존 등 실제 편집 기준을 정리했습니다. 구현은 Codex의 도움을 받아 진행하고, 결과가 기존 작업 방식과 맞는지 확인했습니다."
+    ],
+    [
+      "FilmCraft · 한글 입력과 템플릿",
+      "작업 화면에서 직접 한글을 입력하고 조합 중에도 자막 서식이 유지되도록 개선했습니다. 기존에 사용하던 자막과 효과 프리셋을 조사·이전하고, 템플릿 이름을 관리하는 동작도 보완했습니다.",
       "filmcraft-caption-editor"
+    ],
+    [
+      "FilmCraft · AI 활용 · 기존 작업본에서 편집 규칙 추출",
+      "최근 Premiere 작업본의 글꼴과 굵기, 외곽선·그림자, 정렬과 줄바꿈 정보를 조사하고 Codex의 도움으로 FilmCraft 서식에 대응시켰습니다. 자주 쓰던 자막 서식 7종과 효과 프리셋 110개를 사용자 라이브러리에 추가했으며, 가감속 등 재현 차이는 별도 검토 항목으로 남겼습니다.",
+      "filmcraft-caption-match"
+    ],
+    [
+      "FilmCraft · 자막 생성·검수 흐름",
+      "음성 인식, 표기 교정, 화자별 디자인과 트랙 배치를 연결했습니다. 직접 수정한 자막을 비교 자료로 활용하며 싱크와 문장 경계, 게임 고유명사 처리 기준을 보완했습니다."
+    ],
+    [
+      "FilmCraft · 쇼츠 포맷 자동 배치",
+      "컷 편집한 시퀀스에 세로 영상 규격과 제목·로고·채널명·기본 자막 위치를 적용하는 흐름을 구성했습니다. 반복 배치를 줄이면서 실제 편집에서 다시 수정할 수 있는 형식을 목표로 했습니다."
+    ],
+    [
+      "FilmCraft · 직접 편집한 영상에 자동화 적용·검수",
+      "직접 컷 편집한 영상에 자막과 그래픽 스타일을 적용하고 미리보기를 출력했습니다. AI는 자막·서식과 반복 배치를 보조했으며, 실제 재생 후 효과음 시점, 확대 강도와 자막의 유지 시간을 확인·수정했습니다."
+    ],
+    [
+      "FilmCraft · 템플릿 관리 기능의 검증",
+      "자주 쓰는 그래픽 템플릿을 알아보기 쉬운 한글 이름으로 바꾸고 다시 적용할 수 있도록 개선했습니다. 개인·기본 제공 템플릿의 이름 변경, 취소, 재시작 후 유지 여부를 시험했습니다. 아래 캡처는 이 기능을 확인한 검증용 프로젝트 화면입니다.",
+      "filmcraft-editor"
+    ],
+    [
+      "FilmCraft · 검증과 남은 과제",
+      "실제 프로젝트를 열고 입력·저장·자막 배치 결과를 확인했습니다. 일부 프리셋과 복잡한 템플릿은 원본과 차이가 남아 있어, 완전 호환과 자동 자막 정확도는 계속 검토할 과제입니다."
     ]
   ],
   "links": [
@@ -1154,8 +1189,8 @@ const projects=[
       "김호댕 채널 영상 목록"
     ],
     [
-      "?project=filmcraft",
-      "FilmCraft 편집 환경 개선 과정"
+      "https://github.com/storytold/filmcraft",
+      "FilmCraft 원본 프로젝트"
     ]
   ],
   "ref": "others",
@@ -1167,6 +1202,18 @@ const projects=[
     [
       "filmcraft-caption-editor",
       "실제 FilmCraft 편집 프로젝트 · 한글 대사와 화자 서식 조정"
+    ],
+    [
+      "filmcraft-editor",
+      "템플릿 이름 변경 기능 · 검증용 프로젝트 캡처"
+    ],
+    [
+      "filmcraft-caption-test",
+      "한글 글꼴·외곽선·그림자 · 자막 서식 시험 출력"
+    ],
+    [
+      "filmcraft-caption-match",
+      "기존 채널 자막 스타일 재현 · 자막 서식 시험 출력"
     ]
   ]
 },
@@ -1182,50 +1229,6 @@ const projects=[
    ],
    media:[["dolby-survey","발견 · 동성로 현장 설문 결과 (75명)"],["dolby-journey","정의 · 고객여정지도 · 시네마 밖의 돌비를 알아 가는 과정"],["dolby-goal","정의 · 개발목표지도 · 브랜드 무지에서 인지로"],["dolby-concept","발전 · PR 영상 디자인 콘셉트"],["dolby-tools","전달 · 영상 제작 도구와 AI 활용"]],
    links:[["https://www.youtube.com/watch?v=NSUEtei_DW4","PR 영상 프로토타입 (YouTube · 기획서 수록 링크)"]],ref:"others"},
-  {id:"filmcraft",image:"filmcraft-timeline",name:"FilmCraft · 영상 편집 환경 개선",category:"tools",date:"편집 환경 개선",role:"요구사항 정의 / AI 보조 구현·검증",intro:"실제 영상 편집에서 겪은 불편을 구체적인 요구사항으로 정리하고, AI 보조로 한글 입력·자막·쇼츠 포맷 기능을 개선했습니다.",
-   imageCaption:"실제 FilmCraft 프로젝트 · 여러 자막·오디오 트랙 편집 화면",focus:"반복 편집 작업과 사용성 개선",hideOverviewVisual:true,
-   steps:[
-  [
-    "실제 작업에서 찾은 문제",
-    "Premiere Pro에서 사용하던 자막 스타일과 편집 흐름을 FilmCraft로 옮기면서, 작업 화면의 한글 입력과 템플릿 적용, 자막 편집 동작에서 불편을 발견했습니다.",
-    "filmcraft-timeline"
-  ],
-  [
-    "요구사항 정의와 AI 보조 구현",
-    "솔로·파티별 화자 구분, 의미 단위의 문장 분리, 기존 글꼴·그림자·이름표 보존 등 실제 편집 기준을 정리했습니다. 구현은 Codex의 도움을 받아 진행하고, 결과가 기존 작업 방식과 맞는지 확인했습니다."
-  ],
-  [
-    "한글 입력과 템플릿",
-    "작업 화면에서 직접 한글을 입력하고 조합 중에도 자막 서식이 유지되도록 개선했습니다. 기존에 사용하던 자막과 효과 프리셋을 조사·이전하고, 템플릿 이름을 관리하는 동작도 보완했습니다.",
-    "filmcraft-caption-editor"
-  ],
-  [
-    "AI 활용 · 기존 작업본에서 편집 규칙 추출",
-    "최근 Premiere 작업본의 글꼴과 굵기, 외곽선·그림자, 정렬과 줄바꿈 정보를 조사하고 Codex의 도움으로 FilmCraft 서식에 대응시켰습니다. 자주 쓰던 자막 서식 7종과 효과 프리셋 110개를 사용자 라이브러리에 추가했으며, 가감속 등 재현 차이는 별도 검토 항목으로 남겼습니다.",
-    "filmcraft-caption-match"
-  ],
-  [
-    "자막 생성·검수 흐름",
-    "음성 인식, 표기 교정, 화자별 디자인과 트랙 배치를 연결했습니다. 직접 수정한 자막을 비교 자료로 활용하며 싱크와 문장 경계, 게임 고유명사 처리 기준을 보완했습니다."
-  ],
-  [
-    "쇼츠 포맷 자동 배치",
-    "컷 편집한 시퀀스에 세로 영상 규격과 제목·로고·채널명·기본 자막 위치를 적용하는 흐름을 구성했습니다. 반복 배치를 줄이면서 실제 편집에서 다시 수정할 수 있는 형식을 목표로 했습니다."
-  ],
-  [
-    "직접 편집한 영상에 자동화 적용·검수",
-    "직접 컷 편집한 영상에 자막과 그래픽 스타일을 적용하고 미리보기를 출력했습니다. AI는 자막·서식과 반복 배치를 보조했으며, 실제 재생 후 효과음 시점, 확대 강도와 자막의 유지 시간을 확인·수정했습니다."
-  ],
-  [
-    "템플릿 관리 기능의 검증",
-    "자주 쓰는 그래픽 템플릿을 알아보기 쉬운 한글 이름으로 바꾸고 다시 적용할 수 있도록 개선했습니다. 개인·기본 제공 템플릿의 이름 변경, 취소, 재시작 후 유지 여부를 시험했습니다. 아래 캡처는 이 기능을 확인한 검증용 프로젝트 화면입니다.",
-    "filmcraft-editor"
-  ],
-  [
-    "검증과 남은 과제",
-    "실제 프로젝트를 열고 입력·저장·자막 배치 결과를 확인했습니다. 일부 프리셋과 복잡한 템플릿은 원본과 차이가 남아 있어, 완전 호환과 자동 자막 정확도는 계속 검토할 과제입니다."
-  ]
-],media:[["filmcraft-caption-editor", "실제 편집 화면 · 한글 대사와 화자별 이름·색상 조정"], ["filmcraft-editor", "템플릿 이름 변경 기능 · 검증용 프로젝트 캡처"], ["filmcraft-caption-test", "한글 글꼴·외곽선·그림자 · 자막 서식 시험 출력"], ["filmcraft-caption-match", "기존 채널 자막 스타일 재현 · 자막 서식 시험 출력"]],links:[["https://github.com/storytold/filmcraft","FilmCraft 원본 프로젝트"]],ref:"others"},
   {id:"simulation",image:"simulation",name:"Arena 시뮬레이션 · 제조 공정 개선 팀 과제",category:"tools",date:"2025.12 · 팀 과제",role:"7인 팀 과제 · 팀원",intro:"제조 기업이 새로 시작한 부품 생산 라인을 현장 방문과 질의응답으로 조사하고, Arena로 공정을 모델링해 개선안을 비교한 시스템시뮬레이션및실습 수업의 7인 팀 과제입니다.",
    imageCaption:"Arena 모델 · 베이스 가공 공정",focus:"데이터로 병목과 작업 배분 살피기",
    steps:[
@@ -1917,7 +1920,7 @@ function profileHTML(){
   const tools=[
     ["화면·게임 제작",[["Figma","앱·게임 UI 시안과 화면 흐름, 컴포넌트를 구성합니다. ‘거북이를 날다’와 출격 준비 UI에 활용했고, 익스트랙션에서는 Figma 21개 화면을 Unity 실행 상태와 대조했습니다.","turtle"],["Unity","게임 프로토타입과 플레이 화면을 구현합니다. 라면축제 VR, DSS 드론 사격 VR 시뮬레이터, 익스트랙션 개인 개발과 SRPG 프로토타입에 사용했습니다.","project1"]]],
     ["3D·공간 컴퓨팅",[["SwiftUI · visionOS","KOMIA 팀 프로젝트에서 Vision Pro용 앱과 UI를 구성한 개발 환경입니다. Reality Composer Pro로 3D 장면과 애니메이션을 조합했습니다.","metaverse"],["Blender","3D 모델링과 애니메이션에 활용합니다. KOMIA의 제작 도구로 사용했고, 학교 연구실의 동아리 활동에서 Blender 강의도 진행했습니다. 익스트랙션에서는 Tripo로 생성한 의상을 체형에 맞게 보정하는 과정을 AI와 함께 진행하고 착용 결과를 판정했습니다.","teaching","강의 자료 보기"]]],
-    ["영상 편집",[["Premiere Pro","게임 롱폼·쇼츠의 컷 편집을 직접 진행하고 자막·효과를 구성합니다. 채널의 편집 스타일과 프리셋을 관리했습니다.","editing"],["After Effects","영상 효과와 모션그래픽 작업에 활용합니다. 영상 편집과 함께 사용하는 제작 도구입니다.","editing","관련 영상 작업"],["FilmCraft","여러 트랙과 화자별 자막을 편집합니다. 기존 스타일을 이전하고 한글 입력·자막·템플릿 사용성을 개선·검증했습니다.","filmcraft"]]],
+    ["영상 편집",[["Premiere Pro","게임 롱폼·쇼츠의 컷 편집을 직접 진행하고 자막·효과를 구성합니다. 채널의 편집 스타일과 프리셋을 관리했습니다.","editing"],["After Effects","영상 효과와 모션그래픽 작업에 활용합니다. 영상 편집과 함께 사용하는 제작 도구입니다.","editing","관련 영상 작업"],["FilmCraft","여러 트랙과 화자별 자막을 편집합니다. 기존 스타일을 이전하고 한글 입력·자막·템플릿 사용성을 개선·검증했습니다.","editing"]]],
     ["자막·작업 자동화",[["Vrew · Subtitle Edit","음성 인식으로 자막 초안을 만든 뒤 게임 용어, 문장 경계와 발화 싱크를 확인·교정합니다.","editing"],["ChatGPT · Codex · Claude","GPT로 게임 규칙과 화면 흐름, 기능 간 충돌을 먼저 정리하고, 다듬은 요청을 Codex로 구현합니다. 플레이 화면에서 확인한 증상과 원인을 다시 요청으로 정리하며 고쳐 갑니다. Claude로는 기획 라이브러리·데이터 편집기·포트폴리오 사이트를 옮겨 다시 게시하고, 노트북의 작업 문서를 근거로 포트폴리오 내용을 정리했습니다.","srpg","협업 기록 보기"]]]
   ];
   const highlights=[
@@ -1973,7 +1976,7 @@ content.direction.profileSection="profile-strengths";
 content.work.profileSection="profile-workflow";
 content.teaching={profileSection:"profile-teaching"};
 content.contact.lead="UX·시스템·콘텐츠 기획 관련 연락을 환영합니다.";
-for(const id of ["roblox","dss","editing","filmcraft"])content[id].toc=id;
+for(const id of ["roblox","dss","editing"])content[id].toc=id;
 for(const [key,title] of Object.entries({about:"자기소개",direction:"방향과 강점",work:"작업 방식과 지원 동기",activities:"작업 라이브러리",others:"기타 프로젝트",play:"플레이 기록",more:"더 많은 게임",fandom:"서브컬처",gallery:"작업 모음",contact:"연락처"}))content[key].title=title;
 for(const project of projects)content[project.id].title="프로젝트";
 
@@ -2017,8 +2020,10 @@ const routeOf=(key,section)=>key==="home"?location.pathname:"#"+key+(section?"/"
 function parseRoute(){
   let hash="";try{hash=decodeURIComponent(location.hash.slice(1));}catch{}
   const [key,section]=hash.split("/");
+  if(key==="filmcraft")return {key:"editing",section:null}; // merged into the editing project
   if(content[key])return {key,section:section||null};
   const legacy=new URLSearchParams(location.search).get("project");
+  if(legacy==="filmcraft")return {key:"editing",section:null};
   return content[legacy]?{key:legacy,section:null}:{key:null,section:null};
 }
 function stampScroll(){
