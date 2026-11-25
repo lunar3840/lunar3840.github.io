@@ -656,23 +656,25 @@ function markRead(key){
   refreshReadMarks();
   return pages.every(k=>readSet.has(k));
 }
-// A short paragraph of exactly two sentences reads better with the second sentence on its own line.
+// Short paragraphs (two or three sentences) read better with one sentence per line.
 function breakTwoSentences(root){
   const boundary=/([다요]\.)\s+(?=\S)/g;
   root.querySelectorAll(".detail p, .detail .lead").forEach(p=>{
     if(p.querySelector("br, p, div, ul, ol, table"))return;
     const text=p.textContent.trim();
-    if(text.length>140)return;
+    if(text.length>260)return;
     const cuts=[...text.matchAll(boundary)];
-    if(cuts.length!==1||cuts[0].index+cuts[0][0].length>=text.length-4)return;
-    const walker=document.createTreeWalker(p,NodeFilter.SHOW_TEXT);
-    for(let node=walker.nextNode();node;node=walker.nextNode()){
-      const m=/([다요]\.)\s+(?=\S)/.exec(node.nodeValue);
-      if(!m)continue;
-      const tail=node.splitText(m.index+m[1].length);
-      tail.nodeValue=tail.nodeValue.replace(/^\s+/,"");
-      node.parentNode.insertBefore(document.createElement("br"),tail);
-      return;
+    if(cuts.length<1||cuts.length>2||cuts[cuts.length-1].index+cuts[cuts.length-1][0].length>=text.length-4)return;
+    const walker=document.createTreeWalker(p,NodeFilter.SHOW_TEXT), nodes=[];
+    for(let node=walker.nextNode();node;node=walker.nextNode())nodes.push(node);
+    for(let node of nodes){
+      let m;
+      while(node&&(m=/([다요]\.)\s+(?=\S)/.exec(node.nodeValue))){
+        const tail=node.splitText(m.index+m[1].length);
+        tail.nodeValue=tail.nodeValue.replace(/^\s+/,"");
+        node.parentNode.insertBefore(document.createElement("br"),tail);
+        node=tail;
+      }
     }
   });
 }
