@@ -16,15 +16,6 @@
 - 상세 페이지의 포인트 색은 홈 타일 색을 따릅니다(`.detail-shell[data-accent=…]`).
 - 큰 이미지는 WebP로 바꿨습니다(약 51MB → 6.5MB).
 
-## extraction-design-library/
-
-익스트랙션 기획 라이브러리. GPT 계정과 함께 사라진 원래 라이브러리(`extraction-design-library-ehoji.ehojin0415.chatgpt.site`)를 프로젝트 PC에 보존된 작업 파일·검수 기록으로 다시 만든 정적 페이지입니다(2026-11-26).
-
-- 기록 추가: `library-data.js`의 `RECORDS` 배열 맨 앞에 항목을 넣습니다. 이미지는 `img/`에 WebP로 넣고 확장자 없이 이름만 적습니다.
-- 항목 구성: 날짜 · 도구 · 분류 · 상태(완료 / 완료·한계 있음 / 미완성 인계 / 기준 자료) · 기획 의도 · 수정 회차 · 결과 · 남은 한계 · 이미지/영상.
-- 화면 테마는 데이터 편집기와 같은 `workspace-theme.js`/`.css`를 씁니다(`?theme=black|white`).
-- 아직 없는 것: 9월~10월 초 기록, 노트북에 있는 게임 시스템 기획 자료.
-
 ## extraction-data-editor/
 
 `extraction-balance-editor.ehojin0415.chatgpt.site`에서 운영하던 웹 데이터 편집기의 열람 전용 정적판입니다.
